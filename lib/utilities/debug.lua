@@ -4,6 +4,22 @@ Debug = {}
 Debug.enabled = false
 Debug.returnValue = 10
 
+function Debug:giveItems(playerIndex)
+  local itemNames = {
+    "lab-burner",
+    "lab",
+    "sct-lab-2",
+    "sct-lab-3",
+    "sct-lab-4",
+    "lab-mk2",
+  }
+  for _, itemName in pairs(itemNames) do
+    game.players[playerIndex].get_main_inventory().insert(itemName)
+  end
+end
+
+
+
 function Debug:reseachAllTechnologies()
   force = game.forces["player"]
 
