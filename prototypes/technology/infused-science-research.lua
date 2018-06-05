@@ -1,8 +1,7 @@
 
 
 -- change research cost
-data.raw["technology"]["infinite-science-research"].unit.count = 500 -- half the amount a satellite returns
-data.raw["technology"]["infused-basic-science-research-1"].unit.count = data.raw["technology"]["infinite-science-research"].unit.count
+data.raw["technology"]["infinite-science-research"].unit.count = data.raw["technology"]["infused-basic-science-research-1"].unit.count
 
 data.raw["technology"]["infused-basic-science-research-2"].unit.count = 2 * data.raw["technology"]["infused-basic-science-research-1"].unit.count
 

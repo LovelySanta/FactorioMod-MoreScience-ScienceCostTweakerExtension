@@ -109,3 +109,5 @@ removeRecipeIngredient("advanced-science-fluid-2", "processing-unit")
 --------------------------------------------------------------------------------
 ----- Basic logistics science pack                                         -----
 --------------------------------------------------------------------------------
+removeRecipeIngredient("basic-logistics-science-fluid", "electric-engine-unit")
+addRecipeIngredient("basic-logistics-science-fluid", "electric-furnace", 5)

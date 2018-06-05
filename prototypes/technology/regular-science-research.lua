@@ -8,8 +8,15 @@ removeRecipeUnlock("automation-2", "science-pack-2")
 addPrerequisiteTechnology("basic-science-research-2", "solar-energy")
 -- military-science-pack depend on advanced circuits (potion ingredient)
 addPrerequisiteTechnology("basic-military-science-research", "advanced-electronics")
+-- production-science-pack depend on circuit network and electric engines instead of advanced-material-processing-2
+removePrerequisiteTechnology("advanced-science-research-1", "advanced-material-processing-2")
+addPrerequisiteTechnology("advanced-science-research-1", "circuit-network")
+addPrerequisiteTechnology("advanced-science-research-1", "electric-engine")
 -- high-tech-science-pack depend on nuclear reactor (lab require centrifuge)
 addPrerequisiteTechnology("advanced-science-research-2", "nuclear-power")
+-- basic-logistics-science-pack depend on advanced-material-processing-2
+addPrerequisiteTechnology("basic-logistics-science-research", "advanced-material-processing-2")
+
 
 -- change localised naming
 data.raw["technology"]["basic-science-research-1"].localised_name = {"technology-name.research", {"item-name.science-pack-2"}}

@@ -13,6 +13,7 @@ local function moveRecipeUnlocks(oldTechnologyName, newTechnologyName, recipeNam
 end
 
 
+
 -- ingredients for science-pack-2 needs to move to basic-science-research-1
 moveRecipeUnlocks("automation-2", "basic-science-research-1", {
   "sct-t2-instruments",
@@ -68,6 +69,4 @@ moveRecipeUnlocks("advanced-electronics-2", "advanced-science-research-2", {
   "sct-htech-random",
   "sct-htech-injector",
   "sct-waste-processing-mixed",
-  "sct-lab4-construction",
-  "sct-lab4-manipulators",
 })
