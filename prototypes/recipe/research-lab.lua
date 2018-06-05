@@ -1,3 +1,4 @@
+require "lib/utilities/prototyping"
 
 --------------------------------------------------------------------------------
 ----- Burner lab                                                           -----
@@ -7,13 +8,14 @@ data.raw["recipe"]["lab-burner"].subgroup = nil
 data.raw["recipe"]["lab-burner"].order = nil
 
 
-
 --------------------------------------------------------------------------------
 ----- Lab MK1                                                              -----
 --------------------------------------------------------------------------------
 -- remove subgroup
 data.raw["recipe"]["lab"].subgroup = nil
 data.raw["recipe"]["lab"].order = nil
+-- add previous lab as ingredient
+addRecipeIngredient("lab", "lab-burner", 1)
 
 
 
@@ -50,3 +52,6 @@ data.raw["recipe"]["sct-lab-4"].order = nil
 -- remove subgroup
 data.raw["recipe"]["lab-mk2"].subgroup = nil
 data.raw["recipe"]["lab-mk2"].order = nil
+-- add previous lab as ingredient
+addRecipeIngredient("lab-mk2", "sct-lab-4", 1)
+removeRecipeIngredient("lab-mk2", "lab")

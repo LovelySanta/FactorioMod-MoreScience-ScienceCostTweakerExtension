@@ -22,7 +22,7 @@ table.insert(data.raw["item"]["lab"].inputs, "science-pack-2")
 table.insert(data.raw["item"]["lab"].inputs, "military-science-pack")
 table.insert(data.raw["item"]["lab"].inputs, "basic-automation-science-pack")
 -- change localized name
-data.raw["item"]["lab"].localized_name = {"item-name.lab"}
+data.raw["item"]["lab"].localised_name = {"item-name.lab"}
 -- change subgroup
 data.raw["item"]["lab"].subgroup = data.raw["item"]["lab-burner"].subgroup
 data.raw["item"]["lab"].order = stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "b"
@@ -71,8 +71,6 @@ data.raw["item"]["sct-lab-4"].order = stringSplit(data.raw["item"]["lab-burner"]
 --------------------------------------------------------------------------------
 ----- Infused lab                                                          -----
 --------------------------------------------------------------------------------
--- change localized name
-data.raw["item"]["lab-mk2"].localized_name = {"item-name.lab-mk2"}
 -- change subgroup
 data.raw["item"]["lab-mk2"].subgroup = data.raw["item"]["lab-burner"].subgroup
 data.raw["item"]["lab-mk2"].order = stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "f"

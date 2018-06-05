@@ -103,3 +103,65 @@ function disableRecipe(recipe)
       data.raw["recipe"][recipe].enabled = false
    end
 end
+
+
+
+function addRecipeIngredient(recipeName, itemName, itemAmount)
+  if not data.raw["recipe"][recipeName] then return end
+
+  if data.raw["recipe"][recipeName].ingredients then
+    table.insert(data.raw["recipe"][recipeName].ingredients, {["name"] = itemName, ["amount"] = itemAmount})
+
+    -- clean up recipe becose other mods...
+    if data.raw["recipe"][recipeName].normal or data.raw["recipe"][recipeName].expensive then
+      data.raw["recipe"][recipeName].ingredients = nil
+    end
+  end
+
+  if data.raw["recipe"][recipeName].normal then
+    table.insert(data.raw["recipe"][recipeName].normal.ingredients, {["name"] = itemName, ["amount"] = itemAmount})
+  end
+
+  if data.raw["recipe"][recipeName].expensive then
+    table.insert(data.raw["recipe"][recipeName].expensive.ingredients, {["name"] = itemName, ["amount"] = itemAmount})
+  end
+
+end
+
+
+
+function removeRecipeIngredient(recipeName, ingredientName)
+  if not data.raw["recipe"][recipeName] then return end
+
+  if data.raw["recipe"][recipeName].ingredients then
+    for index, ingredient in pairs(data.raw["recipe"][recipeName].ingredients) do
+      if (ingredient.name and ingredient.name == ingredientName) or (ingredient[1] and ingredient[1] == ingredientName) then
+        table.remove(data.raw["recipe"][recipeName].ingredients, index)
+      end
+    end
+
+    -- clean up recipe becose other mods...
+    if data.raw["recipe"][recipeName].normal or data.raw["recipe"][recipeName].expensive then
+      data.raw["recipe"][recipeName].ingredients = nil
+    end
+  end
+
+  if data.raw["recipe"][recipeName].normal then
+    for index, ingredient in pairs(data.raw["recipe"][recipeName].normal.ingredients) do
+      if (ingredient.name and ingredient.name == ingredientName) or (ingredient[1] and ingredient[1] == ingredientName) then
+        table.remove(data.raw["recipe"][recipeName].normal.ingredients, index)
+        break
+      end
+    end
+  end
+
+  if data.raw["recipe"][recipeName].expensive then
+    for index, ingredient in pairs(data.raw["recipe"][recipeName].expensive.ingredients) do
+      if (ingredient.name and ingredient.name == ingredientName) or (ingredient[1] and ingredient[1] == ingredientName) then
+        table.remove(data.raw["recipe"][recipeName].expensive.ingredients, index)
+        break
+      end
+    end
+  end
+
+end
