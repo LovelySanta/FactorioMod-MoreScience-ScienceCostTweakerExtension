@@ -7,7 +7,7 @@ local function moveSciencePackBack(sciencePackName)
     ["science-pack-3"] = "infused-basic-science-pack-3",
     ["production-science-pack"] = "infused-advanced-science-pack-1",
     ["high-tech-science-pack"] = "infused-advanced-science-pack-2",
-    ["space-science-pack"] = "infinite-science-pack",
+    ["space-science-pack"] = "infused-extreme-science-pack",
     ["military-science-pack"] = "infused-basic-military-science-pack",
     ["basic-automation-science-pack"] = "infused-basic-automation-science-pack",
     ["basic-logistics-science-pack"] = "infused-basic-logistics-science-pack",
@@ -28,6 +28,7 @@ moveSciencePackBack("science-pack-3")
 moveSciencePackBack("military-science-pack")
 moveSciencePackBack("production-science-pack")
 moveSciencePackBack("high-tech-science-pack")
+moveSciencePackBack("space-science-pack")
 moveSciencePackBack("basic-automation-science-pack")
 moveSciencePackBack("basic-power-science-pack")
 moveSciencePackBack("basic-logistics-science-pack")

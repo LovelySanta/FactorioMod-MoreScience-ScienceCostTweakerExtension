@@ -16,6 +16,8 @@ data.raw["recipe"]["lab"].subgroup = nil
 data.raw["recipe"]["lab"].order = nil
 -- add previous lab as ingredient
 addRecipeIngredient("lab", "lab-burner", 1, "item")
+-- disable recipe
+disableRecipe("lab")
 
 
 

@@ -94,24 +94,26 @@ end
 
 
 
-function disableRecipe(recipe)
-   if not data.raw.recipe[recipe] then return end
-   if data.raw["recipe"][recipe].normal then
-      data.raw["recipe"][recipe].normal.enabled = false
-      data.raw["recipe"][recipe].expensive.enabled = false
-   else
-      data.raw["recipe"][recipe].enabled = false
-   end
-end
-
-
-
 local function recipePrototypeCleanup(recipeName)
   -- clean up recipe becose other mods...
   if data.raw["recipe"][recipeName].normal or data.raw["recipe"][recipeName].expensive then
     data.raw["recipe"][recipeName].ingredients = nil
     data.raw["recipe"][recipeName].energy_required = nil
   end
+end
+
+
+
+function disableRecipe(recipe)
+   if not data.raw.recipe[recipe] then return end
+   recipePrototypeCleanup(recipe)
+
+   if data.raw["recipe"][recipe].normal then
+      data.raw["recipe"][recipe].normal.enabled = false
+      data.raw["recipe"][recipe].expensive.enabled = false
+   else
+      data.raw["recipe"][recipe].enabled = false
+   end
 end
 
 
@@ -177,13 +179,13 @@ function editRecipeIngredient(recipeName, oldIngredientName, newIngredientName, 
 
   if data.raw["recipe"][recipeName].ingredients then
     for index, ingredient in pairs(data.raw["recipe"][recipeName].ingredients) do
-      if ingredient.name and ingredient.name == newIngredientName then
+      if ingredient.name and ingredient.name == oldIngredientName then
         data.raw["recipe"][recipeName].ingredients[index].name = newIngredientName
-        data.raw["recipe"][recipeName].ingredients[index].amount = data.raw["recipe"][recipeName].ingredients[index].amount * amountMultiplier
+        data.raw["recipe"][recipeName].ingredients[index].amount = math.floor(.5 + data.raw["recipe"][recipeName].ingredients[index].amount * amountMultiplier)
         break
-      elseif ingredient[1] and ingredient[1] == newIngredientName then
+      elseif ingredient[1] and ingredient[1] == oldIngredientName then
         data.raw["recipe"][recipeName].ingredients[index][1] = newIngredientName
-        data.raw["recipe"][recipeName].ingredients[index][2] = data.raw["recipe"][recipeName].ingredients[index][2] * amountMultiplier
+        data.raw["recipe"][recipeName].ingredients[index][2] = math.floor(.5 + data.raw["recipe"][recipeName].ingredients[index][2] * amountMultiplier)
         break
       end
     end
@@ -191,13 +193,13 @@ function editRecipeIngredient(recipeName, oldIngredientName, newIngredientName, 
 
   if data.raw["recipe"][recipeName].normal then
     for index, ingredient in pairs(data.raw["recipe"][recipeName].normal.ingredients) do
-      if ingredient.name and ingredient.name == newIngredientName then
+      if ingredient.name and ingredient.name == oldIngredientName then
         data.raw["recipe"][recipeName].normal.ingredients[index].name = newIngredientName
-        data.raw["recipe"][recipeName].normal.ingredients[index].amount = data.raw["recipe"][recipeName].ingredients[index].amount * amountMultiplier
+        data.raw["recipe"][recipeName].normal.ingredients[index].amount = math.floor(.5 + data.raw["recipe"][recipeName].normal.ingredients[index].amount * amountMultiplier)
         break
-      elseif ingredient[1] and ingredient[1] == newIngredientName then
+      elseif ingredient[1] and ingredient[1] == oldIngredientName then
         data.raw["recipe"][recipeName].normal.ingredients[index][1] = newIngredientName
-        data.raw["recipe"][recipeName].normal.ingredients[index][2] = data.raw["recipe"][recipeName].ingredients[index][2] * amountMultiplier
+        data.raw["recipe"][recipeName].normal.ingredients[index][2] = math.floor(.5 + data.raw["recipe"][recipeName].normal.ingredients[index][2] * amountMultiplier)
         break
       end
     end
@@ -205,13 +207,13 @@ function editRecipeIngredient(recipeName, oldIngredientName, newIngredientName, 
 
   if data.raw["recipe"][recipeName].expensive then
     for index, ingredient in pairs(data.raw["recipe"][recipeName].expensive.ingredients) do
-      if ingredient.name and ingredient.name == newIngredientName then
+      if ingredient.name and ingredient.name == oldIngredientName then
         data.raw["recipe"][recipeName].expensive.ingredients[index].name = newIngredientName
-        data.raw["recipe"][recipeName].expensive.ingredients[index].amount = data.raw["recipe"][recipeName].ingredients[index].amount * amountMultiplier
+        data.raw["recipe"][recipeName].expensive.ingredients[index].amount = math.floor(.5 + data.raw["recipe"][recipeName].expensive.ingredients[index].amount * amountMultiplier)
         break
-      elseif ingredient[1] and ingredient[1] == newIngredientName then
+      elseif ingredient[1] and ingredient[1] == oldIngredientName then
         data.raw["recipe"][recipeName].expensive.ingredients[index][1] = newIngredientName
-        data.raw["recipe"][recipeName].expensive.ingredients[index][2] = data.raw["recipe"][recipeName].ingredients[index][2] * amountMultiplier
+        data.raw["recipe"][recipeName].expensive.ingredients[index][2] = math.floor(.5 + data.raw["recipe"][recipeName].expensive.ingredients[index][2] * amountMultiplier)
         break
       end
     end

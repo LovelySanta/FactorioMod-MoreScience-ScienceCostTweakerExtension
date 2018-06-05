@@ -19,6 +19,13 @@ require(itemPath .. "research-lab")
 
 -- recipes
 recipePath = "prototypes/recipe/"
+require(recipePath .. "science-intermediates")
 require(recipePath .. "science-fluid")
 require(recipePath .. "regular-science-pack")
 require(recipePath .. "research-lab")
+
+-- technology
+technologyPath = "prototypes/technology/"
+require(technologyPath .. "regular-science-research")
+require(technologyPath .. "science-intermediates")
+require(technologyPath .. "research-lab")
