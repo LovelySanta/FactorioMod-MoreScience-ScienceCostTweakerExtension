@@ -17,7 +17,6 @@ local function moveSciencePackBack(sciencePackName)
   if data.raw["tool"][sciencePackName] then
     data.raw["tool"][sciencePackName].subgroup = "science-pack"
     data.raw["tool"][sciencePackName].order = "z-MoreScience-" .. stringSplit(stringSplit(data.raw["tool"][infusedSciencePack[sciencePackName]].order, "-")[3], "[")[1] .. "[" .. sciencePackName .. "]"
-    log(data.raw["tool"][sciencePackName].order)
   else
     log("WARNING: could not move " .. sciencePackName)
   end
@@ -29,7 +28,6 @@ moveSciencePackBack("science-pack-3")
 moveSciencePackBack("military-science-pack")
 moveSciencePackBack("production-science-pack")
 moveSciencePackBack("high-tech-science-pack")
-
 moveSciencePackBack("basic-automation-science-pack")
 moveSciencePackBack("basic-power-science-pack")
 moveSciencePackBack("basic-logistics-science-pack")

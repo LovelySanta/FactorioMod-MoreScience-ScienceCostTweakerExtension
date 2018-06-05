@@ -15,7 +15,7 @@ data.raw["recipe"]["lab-burner"].order = nil
 data.raw["recipe"]["lab"].subgroup = nil
 data.raw["recipe"]["lab"].order = nil
 -- add previous lab as ingredient
-addRecipeIngredient("lab", "lab-burner", 1)
+addRecipeIngredient("lab", "lab-burner", 1, "item")
 
 
 
@@ -53,5 +53,5 @@ data.raw["recipe"]["sct-lab-4"].order = nil
 data.raw["recipe"]["lab-mk2"].subgroup = nil
 data.raw["recipe"]["lab-mk2"].order = nil
 -- add previous lab as ingredient
-addRecipeIngredient("lab-mk2", "sct-lab-4", 1)
+addRecipeIngredient("lab-mk2", "sct-lab-4", 1, "item")
 removeRecipeIngredient("lab-mk2", "lab")
