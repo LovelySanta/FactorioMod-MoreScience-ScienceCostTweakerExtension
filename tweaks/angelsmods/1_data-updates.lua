@@ -226,6 +226,9 @@ if mods["angelspetrochem"] then
     end
   end
 
+  -- bottling requires wood production
+  addPrerequisiteTechnology("bottling-research", "bio-aboretum-1")
+
   -- change rocket fuel research
   if data.raw["technology"]["angels-rocket-fuel"] then
     removeRecipeUnlock("rocket", "rocket-fuel")

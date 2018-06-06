@@ -538,3 +538,92 @@ function Debug:reseachAllTechnologies()
 
 
 end
+
+
+
+function Debug:reseachAllTechnologiesWithAngels()
+  force = game.forces["player"]
+
+  local function researchTechnology(technologyName)
+    if force.technologies[technologyName] and force.technologies[technologyName].enabled then
+      -- check prerequisites
+      for _,prerequisite in pairs(force.technologies[technologyName].prerequisites) do
+        if not prerequisite.researched then
+          return false
+        end
+      end
+      -- do the research
+      force.technologies[technologyName].researched = true
+      return true
+    end
+    return false
+  end
+
+  -- PART 1: red science packs only
+
+  -- PART 1.1: vanilla
+  researchTechnology("basic-automation")
+  researchTechnology("logistics")
+  researchTechnology("automation")
+  researchTechnology("electronics")
+  researchTechnology("automation-2")
+  researchTechnology("steel-processing")
+  researchTechnology("fluid-handling")
+  researchTechnology("optics")
+  researchTechnology("military")
+  researchTechnology("heavy-armor")
+  researchTechnology("stone-walls")
+  researchTechnology("turrets")
+  researchTechnology("bullet-damage-1")
+  researchTechnology("bullet-speed-1")
+  researchTechnology("shotgun-shell-damage-1")
+  researchTechnology("shotgun-shell-speed-1")
+
+  -- PART 1.2.1: angelsrefining - water treatment
+  researchTechnology("water-treatment")
+  researchTechnology("water-treatment-2")
+  researchTechnology("water-washing-1")
+
+  -- PART 1.2.2: angelsrefining - ore refining
+  researchTechnology("ore-crushing")
+
+  -- PART 1.2.3: angelspetrochem
+  researchTechnology("basic-chemistry")
+  researchTechnology("angels-fluid-control")
+  researchTechnology("angels-coal-processing")
+  researchTechnology("basic-chemistry-2")
+  researchTechnology("angels-nitrogen-processing-1")
+  researchTechnology("angels-sulfur-processing-1")
+
+  -- PART 1.3: angelssmelting
+  researchTechnology("angels-metallurgy-1")
+  researchTechnology("angels-lead-smelting-1")
+  researchTechnology("angels-tin-smelting-1")
+  researchTechnology("angels-solder-smelting-1")
+  researchTechnology("angels-copper-smelting-1")
+  researchTechnology("angels-iron-smelting-1")
+  researchTechnology("angels-stone-smelting-1")
+
+  -- PART 1.4: angelsbioprocessing
+  researchTechnology("bio-processing-green")
+  researchTechnology("bio-processing-brown")
+  researchTechnology("bio-wood-processing")
+  researchTechnology("bio-paper-1")
+  researchTechnology("bio-wood-processing-2")
+  researchTechnology("bio-aboretum-1")
+  researchTechnology("gardens")
+  researchTechnology("bio-farm")
+
+  -- PART 1.5: angelsPotion
+  -- TODO
+
+  -- PART 1.: MoreScience research green science
+  --researchTechnology("basic-science-research-1")
+  --researchTechnology("bottling-research")
+
+
+
+
+
+
+end

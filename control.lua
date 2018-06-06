@@ -11,8 +11,9 @@ end)
 script.on_init(function(_)
 
   if Debug.enabled then
-    game.forces.player.research_all_technologies()
+    --game.forces.player.research_all_technologies()
     --Debug:reseachAllTechnologies()
+    Debug:reseachAllTechnologiesWithAngels()
   end
 
 end)
