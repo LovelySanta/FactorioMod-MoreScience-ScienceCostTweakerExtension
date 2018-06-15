@@ -5,10 +5,11 @@
   "title": "More Science - ScienceCostTweaker Extension",
   "author": "lovely_santa",
   "homepage": "https://mods.factorio.com/mod/MoreScience",
-  "description": "An extension to the Sea Block modpack: Change the way science is beiing made.",
+  "description": "An extension to the Science Cost Tweaker mod: Change the way science is beiing made (even more).",
   "dependencies": [
-    "base",
-    "ScienceCostTweakerM >= 0.16.26",
-    "MoreScience >= 0.1.9"
+    "MoreScience >= 0.1.9",
+    "ScienceCostTweakerM >= 0.16.38",
+
+    "? MoreScience-BobAngelsExtension"
   ]
 }

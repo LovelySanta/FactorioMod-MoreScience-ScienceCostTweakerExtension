@@ -1,8 +1,3 @@
 
--- fluids
-require "prototypes/fluid/barreling"
-
-
-
--- tweaks
-require("tweaks/1_data-updates")
+require("prototypes.fluid.science-fluid")
+require("prototypes.fluid.barreling")

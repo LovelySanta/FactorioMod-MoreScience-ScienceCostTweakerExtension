@@ -1,4 +1,3 @@
-require "lib/utilities/prototyping"
 
 --------------------------------------------------------------------------------
 ----- Burner lab                                                           -----
@@ -8,6 +7,7 @@ data.raw["recipe"]["lab-burner"].subgroup = nil
 data.raw["recipe"]["lab-burner"].order = nil
 
 
+
 --------------------------------------------------------------------------------
 ----- Lab MK1                                                              -----
 --------------------------------------------------------------------------------
@@ -15,9 +15,7 @@ data.raw["recipe"]["lab-burner"].order = nil
 data.raw["recipe"]["lab"].subgroup = nil
 data.raw["recipe"]["lab"].order = nil
 -- add previous lab as ingredient
-addRecipeIngredient("lab", "lab-burner", 1, "item")
--- disable recipe
-disableRecipe("lab")
+MoreScience.lib.recipe.addIngredient("lab", "lab-burner", 1, "item")
 
 
 
@@ -25,8 +23,8 @@ disableRecipe("lab")
 ----- Lab MK2                                                              -----
 --------------------------------------------------------------------------------
 -- remove subgroup
-data.raw["recipe"]["sct-lab-2"].subgroup = nil
-data.raw["recipe"]["sct-lab-2"].order = nil
+data.raw["recipe"]["sct-lab-t2"].subgroup = nil
+data.raw["recipe"]["sct-lab-t2"].order = nil
 
 
 
@@ -34,8 +32,8 @@ data.raw["recipe"]["sct-lab-2"].order = nil
 ----- Lab MK3                                                              -----
 --------------------------------------------------------------------------------
 -- remove subgroup
-data.raw["recipe"]["sct-lab-3"].subgroup = nil
-data.raw["recipe"]["sct-lab-3"].order = nil
+data.raw["recipe"]["sct-lab-t3"].subgroup = nil
+data.raw["recipe"]["sct-lab-t3"].order = nil
 
 
 
@@ -43,8 +41,8 @@ data.raw["recipe"]["sct-lab-3"].order = nil
 ----- Lab MK4                                                              -----
 --------------------------------------------------------------------------------
 -- remove subgroup
-data.raw["recipe"]["sct-lab-4"].subgroup = nil
-data.raw["recipe"]["sct-lab-4"].order = nil
+data.raw["recipe"]["sct-lab-t4"].subgroup = nil
+data.raw["recipe"]["sct-lab-t4"].order = nil
 
 
 
@@ -55,5 +53,4 @@ data.raw["recipe"]["sct-lab-4"].order = nil
 data.raw["recipe"]["lab-mk2"].subgroup = nil
 data.raw["recipe"]["lab-mk2"].order = nil
 -- add previous lab as ingredient
-addRecipeIngredient("lab-mk2", "sct-lab-4", 1, "item")
-removeRecipeIngredient("lab-mk2", "lab")
+MoreScience.lib.recipe.editIngredient("lab-mk2", "lab", "sct-lab-t4", 1)

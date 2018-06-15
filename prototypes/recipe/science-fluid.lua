@@ -1,6 +1,3 @@
-require "lib/utilities/prototyping"
-
-
 
 -- use the new intermediate products that the science packs require
 local function transferRecipeIngredients(copyRecipeName, pasteRecipeName, recipeMultiplier)
@@ -9,11 +6,11 @@ local function transferRecipeIngredients(copyRecipeName, pasteRecipeName, recipe
   if data.raw["recipe"][copyRecipeName].ingredients then
     for _,ingredient in pairs(data.raw["recipe"][copyRecipeName].ingredients) do
       if ingredient.name then
-        addRecipeIngredient(pasteRecipeName, ingredient.name, ingredient.amount * recipeMultiplier, "item")
-        removeRecipeIngredient(copyRecipeName, ingredient.name)
+        MoreScience.lib.recipe.addIngredient(pasteRecipeName, ingredient.name, ingredient.amount * recipeMultiplier, "item")
+        MoreScience.lib.recipe.removeIngredient(copyRecipeName, ingredient.name)
       elseif ingredient[1] then
-        addRecipeIngredient(pasteRecipeName, ingredient[1], ingredient[2] * recipeMultiplier, "item")
-        removeRecipeIngredient(copyRecipeName, ingredient[1])
+        MoreScience.lib.recipe.addIngredient(pasteRecipeName, ingredient[1], ingredient[2] * recipeMultiplier, "item")
+        MoreScience.lib.recipe.removeIngredient(copyRecipeName, ingredient[1])
       end
     end
   end
@@ -21,11 +18,11 @@ local function transferRecipeIngredients(copyRecipeName, pasteRecipeName, recipe
   if data.raw["recipe"][copyRecipeName].normal then
     for _,ingredient in pairs(data.raw["recipe"][copyRecipeName].normal.ingredients) do
       if ingredient.name then
-        addRecipeIngredient(pasteRecipeName, ingredient.name, ingredient.amount * recipeMultiplier, "item")
-        removeRecipeIngredient(copyRecipeName, ingredient.name)
+        MoreScience.lib.recipe.addIngredient(pasteRecipeName, ingredient.name, ingredient.amount * recipeMultiplier, "item")
+        MoreScience.lib.recipe.removeIngredient(copyRecipeName, ingredient.name)
       elseif ingredient[1] then
-        addRecipeIngredient(pasteRecipeName, ingredient[1], ingredient[2] * recipeMultiplier, "item")
-        removeRecipeIngredient(copyRecipeName, ingredient[1])
+        MoreScience.lib.recipe.addIngredient(pasteRecipeName, ingredient[1], ingredient[2] * recipeMultiplier, "item")
+        MoreScience.lib.recipe.removeIngredient(copyRecipeName, ingredient[1])
       end
     end
   end
@@ -33,16 +30,17 @@ local function transferRecipeIngredients(copyRecipeName, pasteRecipeName, recipe
   if data.raw["recipe"][copyRecipeName].expensive then
     for _,ingredient in pairs(data.raw["recipe"][copyRecipeName].expensive.ingredients) do
       if ingredient.name then
-        addRecipeIngredient(pasteRecipeName, ingredient.name, ingredient.amount * recipeMultiplier, "item")
-        removeRecipeIngredient(copyRecipeName, ingredient.name)
+        MoreScience.lib.recipe.addIngredient(pasteRecipeName, ingredient.name, ingredient.amount * recipeMultiplier, "item")
+        MoreScience.lib.recipe.removeIngredient(copyRecipeName, ingredient.name)
       elseif ingredient[1] then
-        addRecipeIngredient(pasteRecipeName, ingredient[1], ingredient[2] * recipeMultiplier, "item")
-        removeRecipeIngredient(copyRecipeName, ingredient[1])
+        MoreScience.lib.recipe.addIngredient(pasteRecipeName, ingredient[1], ingredient[2] * recipeMultiplier, "item")
+        MoreScience.lib.recipe.removeIngredient(copyRecipeName, ingredient[1])
       end
     end
   end
 
 end
+
 
 
 --------------------------------------------------------------------------------
@@ -56,7 +54,7 @@ end
 ----- Science pack 2                                                       -----
 --------------------------------------------------------------------------------
 transferRecipeIngredients("science-pack-2", "basic-science-fluid-2" ,5)
-removeRecipeIngredient("basic-science-fluid-2", "fast-inserter")
+MoreScience.lib.recipe.removeIngredient("basic-science-fluid-2", "fast-inserter")
 
 
 
@@ -64,7 +62,7 @@ removeRecipeIngredient("basic-science-fluid-2", "fast-inserter")
 ----- Science pack 3                                                       -----
 --------------------------------------------------------------------------------
 transferRecipeIngredients("science-pack-3", "basic-science-fluid-3" ,4)
-removeRecipeIngredient("basic-science-fluid-3", "advanced-circuit")
+MoreScience.lib.recipe.removeIngredient("basic-science-fluid-3", "advanced-circuit")
 
 
 
@@ -72,15 +70,15 @@ removeRecipeIngredient("basic-science-fluid-3", "advanced-circuit")
 ----- Military science pack                                                -----
 --------------------------------------------------------------------------------
 transferRecipeIngredients("military-science-pack", "basic-military-science-fluid" ,2)
-removeRecipeIngredient("basic-military-science-fluid", "gun-turret")
-removeRecipeIngredient("basic-military-science-fluid", "piercing-rounds-magazine")
+MoreScience.lib.recipe.removeIngredient("basic-military-science-fluid", "gun-turret")
+MoreScience.lib.recipe.removeIngredient("basic-military-science-fluid", "piercing-rounds-magazine")
 
 
 --------------------------------------------------------------------------------
 ----- Production science pack                                              -----
 --------------------------------------------------------------------------------
 transferRecipeIngredients("production-science-pack", "advanced-science-fluid-1" ,2)
-removeRecipeIngredient("advanced-science-fluid-1", "electric-furnace")
+MoreScience.lib.recipe.removeIngredient("advanced-science-fluid-1", "electric-furnace")
 
 
 
@@ -88,7 +86,7 @@ removeRecipeIngredient("advanced-science-fluid-1", "electric-furnace")
 ----- High tech science pack                                               -----
 --------------------------------------------------------------------------------
 transferRecipeIngredients("high-tech-science-pack", "advanced-science-fluid-2" ,2)
-removeRecipeIngredient("advanced-science-fluid-2", "processing-unit")
+MoreScience.lib.recipe.removeIngredient("advanced-science-fluid-2", "processing-unit")
 
 
 
@@ -109,5 +107,7 @@ removeRecipeIngredient("advanced-science-fluid-2", "processing-unit")
 --------------------------------------------------------------------------------
 ----- Basic logistics science pack                                         -----
 --------------------------------------------------------------------------------
-removeRecipeIngredient("basic-logistics-science-fluid", "electric-engine-unit")
-addRecipeIngredient("basic-logistics-science-fluid", "electric-furnace", 5)
+MoreScience.lib.recipe.removeIngredient("basic-logistics-science-fluid", "electric-engine-unit")
+MoreScience.lib.recipe.addIngredient("basic-logistics-science-fluid", "sct-logistic-unimover", 5, "item")
+MoreScience.lib.recipe.addIngredient("basic-logistics-science-fluid", "sct-logistic-memory-unit", 5, "item")
+--MoreScience.lib.recipe.addIngredient("basic-logistics-science-fluid", "electric-furnace", 5)
