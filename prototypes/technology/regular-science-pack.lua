@@ -73,7 +73,7 @@ end
 -- bottling science ------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- new icon
-data.raw["technology"]["bottling-research"].icon ="__MoreScience-ScienceCostTweakerExtension__/graphics/empty_potion.png"
+data.raw["technology"]["bottling-research"].icon = "__MoreScience-ScienceCostTweakerExtension__/graphics/empty_potion.png"
 data.raw["technology"]["bottling-research"].icon_size = 128
 
 
