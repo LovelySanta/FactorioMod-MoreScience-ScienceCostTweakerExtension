@@ -6,6 +6,7 @@ require("prototypes.technology.research-lab")
 require("prototypes.technology.regular-science-pack")
 require("prototypes.technology.infused-science-pack")
 
+require("prototypes.recipe.research-lab-intermediates")
 require("prototypes.recipe.research-lab")
 require("prototypes.recipe.science-intermediates")
 require("prototypes.recipe.science-fluid")
