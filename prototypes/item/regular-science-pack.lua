@@ -38,15 +38,27 @@ moveSciencePackBack("basic-automation-science-pack")
 moveSciencePackBack("basic-power-science-pack")
 moveSciencePackBack("basic-logistics-science-pack")
 
--- add new icons
-data.raw["tool"]["basic-automation-science-pack"].icon = "__MoreScience-ScienceCostTweakerExtension__/graphics/orange_potion.png"
-data.raw["tool"]["basic-automation-science-pack"].icon_size = 128
-
-data.raw["tool"]["basic-power-science-pack"].icon = util.table.deepcopy(data.raw["tool"]["science-pack-3"].icons[1].icon)
-data.raw["tool"]["basic-power-science-pack"].icon_size = util.table.deepcopy(data.raw["tool"]["science-pack-3"].icons[1].icon_size)
-data.raw["tool"]["science-pack-3"].icon = "__MoreScience-ScienceCostTweakerExtension__/graphics/blue_potion.png"
-data.raw["tool"]["science-pack-3"].icons = nil
-data.raw["tool"]["science-pack-3"].icon_size = 128
-
-data.raw["tool"]["basic-logistics-science-pack"].icon = "__MoreScience-ScienceCostTweakerExtension__/graphics/pink_bright_potion.png"
-data.raw["tool"]["basic-logistics-science-pack"].icon_size = 128
+-- redo the icons since SCT changed them
+for potionName, potionNumber in pairs({
+  ["science-pack-1"] = "14",
+  ["science-pack-2"] = "03",
+  ["science-pack-3"] = "08",
+  ["production-science-pack"] = "10",
+  ["high-tech-science-pack"] = "02",
+  ["space-science-pack"] = "01",
+  ["military-science-pack"] = "09",
+}) do
+  data.raw["tool"][potionName].icon = nil
+  data.raw["tool"][potionName].icon_size = nil
+  data.raw["tool"][potionName].icons =
+  {
+    {
+      icon = "__MoreScience__/graphics/icons/potion/set-01/potion-" .. potionNumber .. ".png",
+      icon_size = 32,
+    },
+    {
+      icon = "__MoreScience__/graphics/icons/potion/cork.png",
+      icon_size = 32,
+    },
+  }
+end

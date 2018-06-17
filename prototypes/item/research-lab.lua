@@ -17,7 +17,6 @@ data.raw["item"]["lab"].localised_name = data.raw["lab"]["lab"].localised_name
 data.raw["item"]["lab"].subgroup = data.raw["item"]["lab-burner"].subgroup
 data.raw["item"]["lab"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "b"
 -- change icon
-log(serpent.block(data.raw["lab"]["lab"]))
 data.raw["item"]["lab"].icon = data.raw["item"]["lab"].icons[1].icon
 --data.raw["item"]["lab"].icon_size = data.raw["item"]["lab"].icons[1].icon_size
 data.raw["item"]["lab"].icons = nil
@@ -65,3 +64,11 @@ data.raw["item"]["sct-lab-t4"].icons = nil
 -- change subgroup
 data.raw["item"]["lab-mk2"].subgroup = data.raw["item"]["lab-burner"].subgroup
 data.raw["item"]["lab-mk2"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "f"
+
+
+--------------------------------------------------------------------------------
+----- Lab module                                                          -----
+--------------------------------------------------------------------------------
+-- change subgroup
+data.raw["item"]["lab-module"].subgroup = data.raw["item"]["lab-burner"].subgroup
+data.raw["item"]["lab-module"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "g"

@@ -91,3 +91,13 @@ data.raw["lab"]["lab-mk2"].max_health = 350
 data.raw["lab"]["lab-mk2"].module_specification = util.table.deepcopy(data.raw["lab"]["sct-lab-t4"].module_specification)
 -- quick replacement
 data.raw["lab"]["lab-mk2"].fast_replaceable_group = data.raw["lab"]["lab"].fast_replaceable_group
+
+
+
+--------------------------------------------------------------------------------
+----- Bio lab                                                              -----
+--------------------------------------------------------------------------------
+if data.raw["lab"]["lab-bio"] and data.raw["tool"]["sct-science-pack-bio"] then
+  -- add bio token to the lab
+  table.insert(data.raw["lab"]["lab-bio"].inputs, 1, "sct-science-pack-bio")
+end

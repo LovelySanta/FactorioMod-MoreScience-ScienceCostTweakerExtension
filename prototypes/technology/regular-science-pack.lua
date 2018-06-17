@@ -5,7 +5,6 @@ local prerequisitesToRemove = {}
 -- red science pack ------------------------------------------------------------
 --------------------------------------------------------------------------------
 if data.raw["technology"]["sct-research-t1"] then
-
   -- remove prerequisites on red science research
   --for _,technologyName in pairs({
   --  "optics",
@@ -35,11 +34,6 @@ end
 -- green science pack ----------------------------------------------------------
 --------------------------------------------------------------------------------
 if data.raw["technology"]["sct-research-t2"] and data.raw["technology"]["basic-science-research-1"] then
-
-  -- copy the potion tech icon
-  data.raw["technology"]["basic-science-research-1"].icon = data.raw["technology"]["sct-research-t2"].icon
-  data.raw["technology"]["basic-science-research-1"].icon_size = data.raw["technology"]["sct-research-t2"].icon_size
-
   -- transfer the effects over
   for _,effect in pairs(data.raw["technology"]["sct-research-t2"].effects) do
     if effect.type == "unlock-recipe" then
@@ -72,19 +66,12 @@ end
 
 -- bottling science ------------------------------------------------------------
 --------------------------------------------------------------------------------
--- new icon
-data.raw["technology"]["bottling-research"].icon = "__MoreScience-ScienceCostTweakerExtension__/graphics/empty_potion.png"
-data.raw["technology"]["bottling-research"].icon_size = 128
 
 
 
 -- gray science pack -----------------------------------------------------------
 --------------------------------------------------------------------------------
 if data.raw["technology"]["sct-research-mil"] and data.raw["technology"]["basic-military-science-research"] then
-  -- copy the potion tech icon
-  data.raw["technology"]["basic-military-science-research"].icon = data.raw["technology"]["sct-research-mil"].icon
-  data.raw["technology"]["basic-military-science-research"].icon_size = data.raw["technology"]["sct-research-mil"].icon_size
-
   -- transfer the effects over
   for _,effect in pairs(data.raw["technology"]["sct-research-mil"].effects) do
     if effect.type == "unlock-recipe" then
@@ -105,19 +92,12 @@ end
 
 -- orange science pack ---------------------------------------------------------
 --------------------------------------------------------------------------------
--- new icon
-data.raw["technology"]["basic-automation-science-research"].icon ="__MoreScience-ScienceCostTweakerExtension__/graphics/orange_potion.png"
-data.raw["technology"]["basic-automation-science-research"].icon_size = 128
 
 
 
 -- blue science pack -----------------------------------------------------------
 --------------------------------------------------------------------------------
 if data.raw["technology"]["sct-research-t3"] and data.raw["technology"]["basic-science-research-2"] then
-  -- copy the potion tech icon
-  data.raw["technology"]["basic-science-research-2"].icon = data.raw["technology"]["sct-research-t3"].icon
-  data.raw["technology"]["basic-science-research-2"].icon_size = data.raw["technology"]["sct-research-t3"].icon_size
-
   -- transfer the effects over
   for _,effect in pairs(data.raw["technology"]["sct-research-t3"].effects) do
     if effect.type == "unlock-recipe" then
@@ -150,21 +130,12 @@ end
 
 -- light blue science pack -----------------------------------------------------
 --------------------------------------------------------------------------------
--- light blue science takes icon from blue science
-data.raw["technology"]["basic-power-science-research"].icon = data.raw["technology"]["basic-science-research-2"].icon
-data.raw["technology"]["basic-power-science-research"].icon_size = data.raw["technology"]["basic-science-research-2"].icon_size
--- blue science gets new icon
-data.raw["technology"]["basic-science-research-2"].icon ="__MoreScience-ScienceCostTweakerExtension__/graphics/blue_potion.png"
-data.raw["technology"]["basic-science-research-2"].icon_size = 128
 
 
 
 -- purple science pack ---------------------------------------------------------
 --------------------------------------------------------------------------------
 if data.raw["technology"]["sct-research-prod"] and data.raw["technology"]["advanced-science-research-1"] then
-  -- copy the potion tech icon
-  data.raw["technology"]["advanced-science-research-1"].icon = data.raw["technology"]["sct-research-prod"].icon
-  data.raw["technology"]["advanced-science-research-1"].icon_size = data.raw["technology"]["sct-research-prod"].icon_size
 
   -- transfer the effects over
   for _,effect in pairs(data.raw["technology"]["sct-research-prod"].effects) do
@@ -186,10 +157,6 @@ end
 
 -- pink science pack -----------------------------------------------------------
 --------------------------------------------------------------------------------
--- new icon
-data.raw["technology"]["basic-logistics-science-research"].icon ="__MoreScience-ScienceCostTweakerExtension__/graphics/pink_bright_potion.png"
-data.raw["technology"]["basic-logistics-science-research"].icon_size = 128
-
 if not data.raw["technology"]["sct-research-logistic"] then
   for _,recipeName in pairs({
     "sct-logistic-cargo-unit",
@@ -202,8 +169,8 @@ if not data.raw["technology"]["sct-research-logistic"] then
 else
   -- transfer the effects over
   for _,effect in pairs(data.raw["technology"]["sct-research-logistic"].effects) do
-    if effect.type == "unlock-recipe" then
-      MoreScience.lib.technology.addRecipeUnlock("advanced-science-research-2", effect.recipe)
+    if effect.type == "unlock-recipe" and effect.recipe ~= "logistic-science-pack" then
+      MoreScience.lib.technology.addRecipeUnlock("basic-logistics-science-research", effect.recipe)
     end
   end
 
@@ -212,15 +179,17 @@ else
   prerequisitesToRemove["sct-research-logistic"] = true
 end
 
+-- add prerequisites
+MoreScience.lib.technology.addPrerequisite("basic-logistics-science-research", "circuit-network")
+if data.raw["technology"]["zinc-processing"] then
+    MoreScience.lib.technology.addPrerequisite("basic-logistics-science-research", "zinc-processing")
+end
+
 
 
 -- high tech science pack ------------------------------------------------------
 --------------------------------------------------------------------------------
 if data.raw["technology"]["sct-research-ht"] and data.raw["technology"]["advanced-science-research-2"] then
-  -- copy the potion tech icon
-  data.raw["technology"]["advanced-science-research-2"].icon = data.raw["technology"]["sct-research-ht"].icon
-  data.raw["technology"]["advanced-science-research-2"].icon_size = data.raw["technology"]["sct-research-ht"].icon_size
-
   -- transfer the effects over
   for _,effect in pairs(data.raw["technology"]["sct-research-ht"].effects) do
     if effect.type == "unlock-recipe" then
@@ -235,15 +204,16 @@ if data.raw["technology"]["sct-research-ht"] and data.raw["technology"]["advance
   -- disable the research from SCT
   data.raw["technology"]["sct-research-ht"].enabled = false
   prerequisitesToRemove["sct-research-ht"] = true
+
 end
 
 
 
 -- infinite science research ---------------------------------------------------
 --------------------------------------------------------------------------------
--- new icon
-data.raw["technology"]["infinite-science-research"].icon ="__MoreScience-ScienceCostTweakerExtension__/graphics/white_potion.png"
-data.raw["technology"]["infinite-science-research"].icon_size = 128
+
+
+
 
 
 
