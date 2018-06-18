@@ -54,3 +54,12 @@ data.raw["recipe"]["lab-mk2"].subgroup = nil
 data.raw["recipe"]["lab-mk2"].order = nil
 -- add previous lab as ingredient
 MoreScience.lib.recipe.editIngredient("lab-mk2", "lab", "sct-lab-t4", 1)
+
+
+
+--------------------------------------------------------------------------------
+----- Lab module                                                          -----
+--------------------------------------------------------------------------------
+-- remove subgroup
+data.raw["recipe"]["lab-module"].subgroup = nil
+data.raw["recipe"]["lab-module"].order = nil

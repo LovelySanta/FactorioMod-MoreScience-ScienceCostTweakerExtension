@@ -418,8 +418,10 @@ function Debug:reseachAllTechnologies()
     researchTechnology("speed-module")
     researchTechnology("productivity-module")
 
-    researchTechnology("pollution-create-module-1")
-    researchTechnology("pollution-clean-module-1")
+    if not game.active_mods["CircuitProcessing"] then
+      researchTechnology("pollution-create-module-1")
+      researchTechnology("pollution-clean-module-1")
+    end
   end
 
   -- PART 11: bobwarfare
@@ -509,9 +511,11 @@ function Debug:reseachAllTechnologies()
 
   -- PART 2: bobmodules
   if game.active_mods["bobmodules"] then
-    researchTechnology("raw-speed-module-1")
-    researchTechnology("raw-productivity-module-1")
-    researchTechnology("green-module-1")
+    if not game.active_mods["CircuitProcessing"] then
+      researchTechnology("raw-speed-module-1")
+      researchTechnology("raw-productivity-module-1")
+      researchTechnology("green-module-1")
+    end
   end
 
   -- PART 3: bobpower
@@ -725,12 +729,14 @@ function Debug:reseachAllTechnologies()
 
   -- PART 10: bobmodules
   if game.active_mods["bobmodules"] then
-    researchTechnology("pollution-create-module-2")
-    researchTechnology("pollution-clean-module-2")
+    if not game.active_mods["CircuitProcessing"] then
+      researchTechnology("pollution-create-module-2")
+      researchTechnology("pollution-clean-module-2")
 
-    researchTechnology("raw-speed-module-2")
-    researchTechnology("raw-productivity-module-2")
-    researchTechnology("green-module-2")
+      researchTechnology("raw-speed-module-2")
+      researchTechnology("raw-productivity-module-2")
+      researchTechnology("green-module-2")
+    end
   end
 
   -- PART 11: bobpower
@@ -989,8 +995,10 @@ function Debug:reseachAllTechnologies()
 
   -- PART 8: bobmodules
   if game.active_mods["bobmodules"] then
-    researchTechnology("productivity-module-4")
-    researchTechnology("productivity-module-5")
+    if not game.active_mods["CircuitProcessing"] then
+      researchTechnology("productivity-module-4")
+      researchTechnology("productivity-module-5")
+    end
   end
 
   -- PART 9: bobpower
@@ -1157,34 +1165,43 @@ function Debug:reseachAllTechnologies()
 
   -- PART 9: bobmodules
   if game.active_mods["bobmodules"] then
-    researchTechnology("speed-module-4")
-    researchTechnology("speed-module-5")
-    researchTechnology("speed-module-6")
-    researchTechnology("productivity-module-6")
-    researchTechnology("effectivity-module-4")
-    researchTechnology("effectivity-module-5")
-    researchTechnology("effectivity-module-6")
-    researchTechnology("pollution-create-module-3")
-    researchTechnology("pollution-create-module-4")
-    researchTechnology("pollution-create-module-5")
-    researchTechnology("pollution-create-module-6")
-    researchTechnology("pollution-clean-module-3")
-    researchTechnology("pollution-clean-module-4")
-    researchTechnology("pollution-clean-module-5")
-    researchTechnology("pollution-clean-module-6")
+    if not game.active_mods["CircuitProcessing"] then
+      researchTechnology("speed-module-4")
+      researchTechnology("speed-module-5")
+      researchTechnology("speed-module-6")
+      researchTechnology("productivity-module-6")
+      researchTechnology("effectivity-module-4")
+      researchTechnology("effectivity-module-5")
+      researchTechnology("effectivity-module-6")
+      researchTechnology("pollution-create-module-3")
+      researchTechnology("pollution-create-module-4")
+      researchTechnology("pollution-create-module-5")
+      researchTechnology("pollution-create-module-6")
+      researchTechnology("pollution-clean-module-3")
+      researchTechnology("pollution-clean-module-4")
+      researchTechnology("pollution-clean-module-5")
+      researchTechnology("pollution-clean-module-6")
 
-    researchTechnology("raw-speed-module-3")
-    researchTechnology("raw-speed-module-4")
-    researchTechnology("raw-speed-module-5")
-    researchTechnology("raw-speed-module-6")
-    researchTechnology("raw-productivity-module-3")
-    researchTechnology("raw-productivity-module-4")
-    researchTechnology("raw-productivity-module-5")
-    researchTechnology("raw-productivity-module-6")
-    researchTechnology("green-module-3")
-    researchTechnology("green-module-4")
-    researchTechnology("green-module-5")
-    researchTechnology("green-module-6")
+      researchTechnology("raw-speed-module-3")
+      researchTechnology("raw-speed-module-4")
+      researchTechnology("raw-speed-module-5")
+      researchTechnology("raw-speed-module-6")
+      researchTechnology("raw-productivity-module-3")
+      researchTechnology("raw-productivity-module-4")
+      researchTechnology("raw-productivity-module-5")
+      researchTechnology("raw-productivity-module-6")
+      researchTechnology("green-module-3")
+      researchTechnology("green-module-4")
+      researchTechnology("green-module-5")
+      researchTechnology("green-module-6")
+    else
+      researchTechnology("speed-module-3")
+      researchTechnology("speed-module-4")
+      researchTechnology("productivity-module-3")
+      researchTechnology("productivity-module-4")
+      researchTechnology("effectivity-module-3")
+      researchTechnology("effectivity-module-4")
+    end
 
     researchTechnology("effect-transmission-2")
     researchTechnology("effect-transmission-3")
@@ -1294,22 +1311,24 @@ function Debug:reseachAllTechnologies()
 
   -- PART 3: bobmodules
   if game.active_mods["bobmodules"] then
-    researchTechnology("effectivity-module-7")
-    researchTechnology("effectivity-module-8")
-    researchTechnology("speed-module-7")
-    researchTechnology("speed-module-8")
-    researchTechnology("productivity-module-7")
-    researchTechnology("productivity-module-8")
-    researchTechnology("pollution-create-module-7")
-    researchTechnology("pollution-create-module-8")
-    researchTechnology("pollution-clean-module-7")
-    researchTechnology("pollution-clean-module-8")
-    researchTechnology("raw-speed-module-7")
-    researchTechnology("raw-speed-module-8")
-    researchTechnology("raw-productivity-module-7")
-    researchTechnology("raw-productivity-module-8")
-    researchTechnology("green-module-7")
-    researchTechnology("green-module-8")
+    if not game.active_mods["CircuitProcessing"] then
+      researchTechnology("effectivity-module-7")
+      researchTechnology("effectivity-module-8")
+      researchTechnology("speed-module-7")
+      researchTechnology("speed-module-8")
+      researchTechnology("productivity-module-7")
+      researchTechnology("productivity-module-8")
+      researchTechnology("pollution-create-module-7")
+      researchTechnology("pollution-create-module-8")
+      researchTechnology("pollution-clean-module-7")
+      researchTechnology("pollution-clean-module-8")
+      researchTechnology("raw-speed-module-7")
+      researchTechnology("raw-speed-module-8")
+      researchTechnology("raw-productivity-module-7")
+      researchTechnology("raw-productivity-module-8")
+      researchTechnology("green-module-7")
+      researchTechnology("green-module-8")
+    end
   end
 
   -- PART 4: bobwarfare
