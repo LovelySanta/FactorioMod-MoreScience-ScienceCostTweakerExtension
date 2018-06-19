@@ -5,6 +5,7 @@
 require("prototypes.technology.research-lab")
 require("prototypes.technology.regular-science-pack")
 require("prototypes.technology.bio-science-pack")
+require("prototypes.technology.alien-science-pack")
 require("prototypes.technology.module-science-pack")
 
 require("prototypes.recipe.research-lab-intermediates")
@@ -18,6 +19,7 @@ require("prototypes.entity.research-lab")
 require("prototypes.item.research-lab")
 require("prototypes.item.science-intermediates")
 require("prototypes.item.regular-science-pack")
+require("prototypes.item.alien-science-pack")
 
 
 
@@ -25,7 +27,7 @@ require("prototypes.item.regular-science-pack")
 -- technology tree cleanup
 local containsExtension = false
 for _,extension in pairs({
-  --empty
+  "SeaBlockExtension",
 }) do
   if mods["MoreScience-" .. extension] then
     containsExtension = true
@@ -33,5 +35,6 @@ for _,extension in pairs({
   end
 end
 if not containsExtension then
+  log("cleaning up the tech tree")
   MoreScience.lib.technology.removeAllRedundantPrerequisites()
 end

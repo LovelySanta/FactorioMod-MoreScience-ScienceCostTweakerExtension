@@ -47,3 +47,8 @@ if not data.raw["item"]["sct-logistic-cargo-unit"] then
     },
   })
 end
+
+if data.raw["tool"]["science-pack-gold"] then
+  data.raw["tool"]["science-pack-gold"].icon = "__bobtech__/graphics/icons/alien-technology.png"
+  data.raw["tool"]["science-pack-gold"].icon_size = 128
+end

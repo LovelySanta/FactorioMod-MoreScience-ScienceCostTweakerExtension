@@ -6,6 +6,10 @@
 data.raw["item"]["lab-burner"].icon = data.raw["item"]["lab"].icons[1].icon
 data.raw["item"]["lab-burner"].icon_size = data.raw["item"]["lab"].icon_size
 data.raw["item"]["lab-burner"].order = "d[lab]-a"
+if data.raw["item-subgroup"]["sct-labs"] then
+  data.raw["item-subgroup"]["sct-labs"].group = "ms-science"
+  data.raw["item"]["lab-burner"].subgroup = "sct-labs"
+end
 
 
 --------------------------------------------------------------------------------
@@ -22,6 +26,7 @@ data.raw["item"]["lab"].icon = data.raw["item"]["lab"].icons[1].icon
 data.raw["item"]["lab"].icons = nil
 
 
+
 --------------------------------------------------------------------------------
 ----- Lab MK2                                                              -----
 --------------------------------------------------------------------------------
@@ -32,6 +37,7 @@ data.raw["item"]["sct-lab-t2"].order = MoreScience.lib.util.stringSplit(data.raw
 data.raw["item"]["sct-lab-t2"].icon = data.raw["item"]["sct-lab-t2"].icons[1].icon
 --data.raw["item"]["sct-lab-t2"].icon_size = data.raw["item"]["sct-lab-t2"].icons[1].icon_size
 data.raw["item"]["sct-lab-t2"].icons = nil
+
 
 
 --------------------------------------------------------------------------------
@@ -58,6 +64,7 @@ data.raw["item"]["sct-lab-t4"].icon = data.raw["item"]["sct-lab-t4"].icons[1].ic
 data.raw["item"]["sct-lab-t4"].icons = nil
 
 
+
 --------------------------------------------------------------------------------
 ----- Infused lab                                                          -----
 --------------------------------------------------------------------------------
@@ -66,9 +73,34 @@ data.raw["item"]["lab-mk2"].subgroup = data.raw["item"]["lab-burner"].subgroup
 data.raw["item"]["lab-mk2"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "f"
 
 
+
 --------------------------------------------------------------------------------
 ----- Lab module                                                          -----
 --------------------------------------------------------------------------------
--- change subgroup
-data.raw["item"]["lab-module"].subgroup = data.raw["item"]["lab-burner"].subgroup
-data.raw["item"]["lab-module"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "g"
+if data.raw["item"]["lab-bio"] then
+  -- change subgroup
+  data.raw["item"]["lab-bio"].subgroup = data.raw["item"]["lab-burner"].subgroup
+  data.raw["item"]["lab-bio"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "g"
+end
+
+
+
+--------------------------------------------------------------------------------
+----- Lab module                                                          -----
+--------------------------------------------------------------------------------
+if data.raw["item"]["lab-module"] then
+  -- change subgroup
+  data.raw["item"]["lab-module"].subgroup = data.raw["item"]["lab-burner"].subgroup
+  data.raw["item"]["lab-module"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "h"
+end
+
+
+
+--------------------------------------------------------------------------------
+----- alien lab                                                          -----
+--------------------------------------------------------------------------------
+if data.raw["item"]["lab-alien"] then
+  -- remove subgroup
+  data.raw["item"]["lab-alien"].subgroup = data.raw["item"]["lab-burner"].subgroup
+  data.raw["item"]["lab-alien"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "i"
+end

@@ -58,8 +58,17 @@ MoreScience.lib.recipe.editIngredient("lab-mk2", "lab", "sct-lab-t4", 1)
 
 
 --------------------------------------------------------------------------------
------ Lab module                                                          -----
+----- module lab                                                          -----
 --------------------------------------------------------------------------------
 -- remove subgroup
 data.raw["recipe"]["lab-module"].subgroup = nil
 data.raw["recipe"]["lab-module"].order = nil
+
+
+
+--------------------------------------------------------------------------------
+----- alien lab                                                          -----
+--------------------------------------------------------------------------------
+-- remove subgroup
+data.raw["recipe"]["lab-alien"].subgroup = nil
+data.raw["recipe"]["lab-alien"].order = nil
