@@ -13,11 +13,10 @@ end
 --------------------------------------------------------------------------------
 -- red lab, up to automation science packs
 MoreScience.lib.technology.removeRecipeUnlock("basic-automation", "lab")
-MoreScience.lib.technology.addPrerequisite("sct-lab-t1", "basic-automation")
+--MoreScience.lib.technology.addPrerequisite("sct-lab-t1", "basic-automation")
 MoreScience.lib.technology.addPrerequisite("sct-lab-t1", "logistics")
 MoreScience.lib.technology.addIngredient("sct-lab-t1", 1, "science-pack-1")
 MoreScience.lib.technology.removePrerequisite("research-speed-1", "sct-research-t2")
-
 
 
 -- lab mk 2 (green) ------------------------------------------------------------

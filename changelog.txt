@@ -1,0 +1,11 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 21. 6. 2018
+  Fixes:
+    - Fixed some error occuring with alien research lab
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0 - Limited test release
+Date: 19. 6. 2018
+  Major Features:
+    - Initial test release
+    - Fluids require SCT ingredients instead of science packs
