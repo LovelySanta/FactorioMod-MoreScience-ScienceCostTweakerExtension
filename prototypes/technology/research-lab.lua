@@ -48,3 +48,4 @@ MoreScience.lib.technology.addIngredient("sct-lab-t4", 1, "basic-power-science-p
 --------------------------------------------------------------------------------
 -- disable lab
 MoreScience.lib.technology.removeRecipeUnlock("advanced-electronics-3", "lab-2")
+MoreScience.lib.technology.disable("sct-lab-lab2")

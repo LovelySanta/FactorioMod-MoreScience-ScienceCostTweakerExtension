@@ -1,13 +1,13 @@
 {
   "name": "MoreScience-ScienceCostTweakerExtension",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "factorio_version": "0.16",
   "title": "More Science - ScienceCostTweaker Extension",
   "author": "lovely_santa",
   "homepage": "https://mods.factorio.com/mod/MoreScience-ScienceCostTweakerExtension",
   "description": "An extension to the Science Cost Tweaker mod: Change the way science is beiing made (even more).",
   "dependencies": [
-    "MoreScience >= 0.1.9",
+    "MoreScience >= 0.1.12",
     "ScienceCostTweakerM >= 0.16.38",
 
     "? MoreScience-BobAngelsExtension"

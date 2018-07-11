@@ -1,5 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
+Date: 11. 7. 2018
+  Fixes:
+    - Fixed crafting category wasn't set to crafting-with-fluids
+---------------------------------------------------------------------------------------------------
+Version: 0.1.2
 Date: 21. 6. 2018
   Fixes:
     - Fixed unwanted lab unlock with advanced electronics 3 research

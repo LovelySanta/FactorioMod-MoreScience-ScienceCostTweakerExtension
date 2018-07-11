@@ -11,6 +11,7 @@
 --------------------------------------------------------------------------------
 MoreScience.lib.recipe.addIngredient("science-pack-2", "empty-bottle", 1, "item")
 MoreScience.lib.recipe.addIngredient("science-pack-2", "basic-science-fluid-2", 10, "fluid")
+MoreScience.lib.recipe.setCraftingCategory("science-pack-2", "crafting-with-fluid")
 
 
 
@@ -19,6 +20,7 @@ MoreScience.lib.recipe.addIngredient("science-pack-2", "basic-science-fluid-2", 
 --------------------------------------------------------------------------------
 MoreScience.lib.recipe.addIngredient("science-pack-3", "empty-bottle", 1, "item")
 MoreScience.lib.recipe.addIngredient("science-pack-3", "basic-science-fluid-3", 10, "fluid")
+MoreScience.lib.recipe.setCraftingCategory("science-pack-3", "crafting-with-fluid")
 
 
 
@@ -27,6 +29,7 @@ MoreScience.lib.recipe.addIngredient("science-pack-3", "basic-science-fluid-3", 
 --------------------------------------------------------------------------------
 MoreScience.lib.recipe.addIngredient("military-science-pack", "empty-bottle", 1, "item")
 MoreScience.lib.recipe.addIngredient("military-science-pack", "basic-military-science-fluid", 10, "fluid")
+MoreScience.lib.recipe.setCraftingCategory("military-science-pack", "crafting-with-fluid")
 
 
 
@@ -35,6 +38,7 @@ MoreScience.lib.recipe.addIngredient("military-science-pack", "basic-military-sc
 --------------------------------------------------------------------------------
 MoreScience.lib.recipe.addIngredient("production-science-pack", "empty-bottle", 1, "item")
 MoreScience.lib.recipe.addIngredient("production-science-pack", "advanced-science-fluid-1", 10, "fluid")
+MoreScience.lib.recipe.setCraftingCategory("production-science-pack", "crafting-with-fluid")
 
 
 
@@ -43,6 +47,7 @@ MoreScience.lib.recipe.addIngredient("production-science-pack", "advanced-scienc
 --------------------------------------------------------------------------------
 MoreScience.lib.recipe.addIngredient("high-tech-science-pack", "empty-bottle", 1, "item")
 MoreScience.lib.recipe.addIngredient("high-tech-science-pack", "advanced-science-fluid-2", 10, "fluid")
+MoreScience.lib.recipe.setCraftingCategory("high-tech-science-pack", "crafting-with-fluid")
 
 
 
