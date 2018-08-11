@@ -14,8 +14,16 @@ data.raw["recipe"]["lab-burner"].order = nil
 -- remove subgroup
 data.raw["recipe"]["lab"].subgroup = nil
 data.raw["recipe"]["lab"].order = nil
--- add previous lab as ingredient
-MoreScience.lib.recipe.addIngredient("lab", "lab-burner", 1, "item")
+
+if settings.startup["sct-tier1-lab"].value == "lab" then
+  -- edit ingredients
+  MoreScience.lib.recipe.removeIngredient("lab", "transport-belt")
+  MoreScience.lib.recipe.addIngredient("lab", "sct-lab1-construction", 1, "item")
+  MoreScience.lib.recipe.addIngredient("lab", "sct-lab1-mechanization", 1, "item")
+else
+  -- add previous lab as ingredient
+  MoreScience.lib.recipe.addIngredient("lab", "lab-burner", 1, "item")
+end
 
 
 

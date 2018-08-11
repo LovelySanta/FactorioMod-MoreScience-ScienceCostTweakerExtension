@@ -62,6 +62,8 @@ if data.raw["technology"]["sct-research-t2"] and data.raw["technology"]["basic-s
 
 end
 
+data.raw["technology"]["basic-science-research-1"].localised_name = {"technology-name.research", "__ITEM__science-pack-2__"}
+
 
 
 -- bottling science ------------------------------------------------------------
@@ -80,18 +82,26 @@ if data.raw["technology"]["sct-research-mil"] and data.raw["technology"]["basic-
   end
 
   -- add additional prerequisites
-  MoreScience.lib.technology.addPrerequisite("basic-military-science-research", "advanced-electronics")
-  MoreScience.lib.technology.addPrerequisite("energy-shield-equipment", "basic-military-science-research")
+  if settings.startup["LM-compressed-landfill-amount"].value == "tier3" then
+    MoreScience.lib.technology.addPrerequisite("basic-military-science-research", "advanced-electronics")
+  else
+    MoreScience.lib.technology.addPrerequisite("basic-military-science-research", "electronics")
+  end
+    MoreScience.lib.technology.addPrerequisite("energy-shield-equipment", "basic-military-science-research")
 
   -- disable the research from SCT
   data.raw["technology"]["sct-research-mil"].enabled = false
   prerequisitesToRemove["sct-research-mil"] = true
 end
 
+data.raw["technology"]["basic-military-science-research"].localised_name = {"technology-name.research", "__ITEM__military-science-pack__"}
+
 
 
 -- orange science pack ---------------------------------------------------------
 --------------------------------------------------------------------------------
+
+data.raw["technology"]["basic-automation-science-research"].localised_name = {"technology-name.research", "__ITEM__basic-automation-science-pack__"}
 
 
 
@@ -126,10 +136,14 @@ if data.raw["technology"]["sct-research-t3"] and data.raw["technology"]["basic-s
   prerequisitesToRemove["sct-research-t3"] = true
 end
 
+data.raw["technology"]["basic-science-research-2"].localised_name = {"technology-name.research", "__ITEM__science-pack-3__"}
+
 
 
 -- light blue science pack -----------------------------------------------------
 --------------------------------------------------------------------------------
+
+data.raw["technology"]["basic-power-science-research"].localised_name = {"technology-name.research", "__ITEM__basic-power-science-pack__"}
 
 
 
@@ -152,6 +166,8 @@ if data.raw["technology"]["sct-research-prod"] and data.raw["technology"]["advan
   data.raw["technology"]["sct-research-prod"].enabled = false
   prerequisitesToRemove["sct-research-prod"] = true
 end
+
+data.raw["technology"]["advanced-science-research-1"].localised_name = {"technology-name.research", "__ITEM__production-science-pack__"}
 
 
 
@@ -185,6 +201,8 @@ if data.raw["technology"]["zinc-processing"] then
     MoreScience.lib.technology.addPrerequisite("basic-logistics-science-research", "zinc-processing")
 end
 
+data.raw["technology"]["basic-logistics-science-research"].localised_name = {"technology-name.research", "__ITEM__basic-logistics-science-pack__"}
+
 
 
 -- high tech science pack ------------------------------------------------------
@@ -206,6 +224,8 @@ if data.raw["technology"]["sct-research-ht"] and data.raw["technology"]["advance
   prerequisitesToRemove["sct-research-ht"] = true
 
 end
+
+data.raw["technology"]["advanced-science-research-2"].localised_name = {"technology-name.research", "__ITEM__high-tech-science-pack__"}
 
 
 
