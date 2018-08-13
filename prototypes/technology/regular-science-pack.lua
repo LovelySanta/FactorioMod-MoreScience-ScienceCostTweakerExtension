@@ -82,7 +82,7 @@ if data.raw["technology"]["sct-research-mil"] and data.raw["technology"]["basic-
   end
 
   -- add additional prerequisites
-  if settings.startup["LM-compressed-landfill-amount"].value == "tier3" then
+  if settings.startup["sct-military"].value == "tier3" then
     MoreScience.lib.technology.addPrerequisite("basic-military-science-research", "advanced-electronics")
   else
     MoreScience.lib.technology.addPrerequisite("basic-military-science-research", "electronics")
