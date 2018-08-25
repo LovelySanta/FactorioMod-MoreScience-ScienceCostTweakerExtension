@@ -11,8 +11,12 @@ if data.raw["tool"]["science-pack-gold"] then
     "alien-science-pack-green",
     "alien-science-pack-red",
   }) do
-    data.raw["tool"][packName].subgroup = "science-alien-packs"
-    data.raw["recipe"][packName].subgroup = nil
+    if data.raw["tool"][packName] then
+      data.raw["tool"][packName].subgroup = "science-alien-packs"
+    end
+    if data.raw["recipe"][packName] then
+      data.raw["recipe"][packName].subgroup = nil
+    end
   end
 end
 
