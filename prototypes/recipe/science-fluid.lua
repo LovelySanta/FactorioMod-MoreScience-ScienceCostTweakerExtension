@@ -49,13 +49,12 @@ end
 
 
 
-
 --------------------------------------------------------------------------------
 ----- Science pack 2                                                       -----
 --------------------------------------------------------------------------------
 transferRecipeIngredients("science-pack-2", "basic-science-fluid-2" ,5)
+MoreScience.lib.recipe.editIngredient("basic-science-fluid-2", "long-handed-inserter", "fast-inserter", 1) -- bob inserter overhaul changes fast to long handed
 MoreScience.lib.recipe.removeIngredient("basic-science-fluid-2", "fast-inserter")
-MoreScience.lib.recipe.removeIngredient("basic-science-fluid-2", "long-handed-inserter") -- bob inserter overhaul changes fast to long handed
 
 
 
@@ -67,12 +66,14 @@ MoreScience.lib.recipe.removeIngredient("basic-science-fluid-3", "advanced-circu
 
 
 
+
 --------------------------------------------------------------------------------
 ----- Military science pack                                                -----
 --------------------------------------------------------------------------------
 transferRecipeIngredients("military-science-pack", "basic-military-science-fluid" ,2)
 MoreScience.lib.recipe.removeIngredient("basic-military-science-fluid", "gun-turret")
 MoreScience.lib.recipe.removeIngredient("basic-military-science-fluid", "piercing-rounds-magazine")
+
 
 
 --------------------------------------------------------------------------------
@@ -112,3 +113,7 @@ MoreScience.lib.recipe.removeIngredient("basic-logistics-science-fluid", "electr
 MoreScience.lib.recipe.addIngredient("basic-logistics-science-fluid", "sct-logistic-cargo-unit", 5, "item")
 MoreScience.lib.recipe.addIngredient("basic-logistics-science-fluid", "sct-logistic-memory-unit", 5, "item")
 --MoreScience.lib.recipe.addIngredient("basic-logistics-science-fluid", "electric-furnace", 5)
+
+if settings.startup["bobmods-logistics-inserteroverhaul"] and settings.startup["bobmods-logistics-inserteroverhaul"].value then
+  MoreScience.lib.recipe.editIngredient("sct-logistic-automated-storage", "filter-inserter", "red-filter-inserter", 1)
+end

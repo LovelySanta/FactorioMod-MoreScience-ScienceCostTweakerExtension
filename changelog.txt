@@ -3,7 +3,8 @@ Version: 0.1.6
 Date: 29. 8. 2018
   Fixes:
     - Fixed logistics science required Universal transport engines instead of Flying cargo kit
-    - Fixed when bob inserter overhaul was present it wouldn't remove the fast inserter from the recipe
+    - Fixed when bob inserter overhaul was present it wouldn't remove the fast inserter from the ATMOS set recipe
+    - Fixed when bob inserter overhaul was present it wouldn't update the filter inserter from the Automated storage recipe
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.5
 Date: 25. 8. 2018
