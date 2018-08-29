@@ -55,6 +55,7 @@ end
 --------------------------------------------------------------------------------
 transferRecipeIngredients("science-pack-2", "basic-science-fluid-2" ,5)
 MoreScience.lib.recipe.removeIngredient("basic-science-fluid-2", "fast-inserter")
+MoreScience.lib.recipe.removeIngredient("basic-science-fluid-2", "long-handed-inserter") -- bob inserter overhaul changes fast to long handed
 
 
 
@@ -108,6 +109,6 @@ MoreScience.lib.recipe.removeIngredient("advanced-science-fluid-2", "processing-
 ----- Basic logistics science pack                                         -----
 --------------------------------------------------------------------------------
 MoreScience.lib.recipe.removeIngredient("basic-logistics-science-fluid", "electric-engine-unit")
-MoreScience.lib.recipe.addIngredient("basic-logistics-science-fluid", "sct-logistic-unimover", 5, "item")
+MoreScience.lib.recipe.addIngredient("basic-logistics-science-fluid", "sct-logistic-cargo-unit", 5, "item")
 MoreScience.lib.recipe.addIngredient("basic-logistics-science-fluid", "sct-logistic-memory-unit", 5, "item")
 --MoreScience.lib.recipe.addIngredient("basic-logistics-science-fluid", "electric-furnace", 5)
