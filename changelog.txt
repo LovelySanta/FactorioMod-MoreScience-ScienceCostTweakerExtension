@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.5
+Version: 0.1.7
 Date: 25. 8. 2018
   Changes:
     - Removed duplicate ingredients from yellow science
