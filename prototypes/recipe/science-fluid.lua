@@ -96,13 +96,14 @@ MoreScience.lib.recipe.removeIngredient("advanced-science-fluid-1", "electric-fu
 --------------------------------------------------------------------------------
 transferRecipeIngredients("high-tech-science-pack", "advanced-science-fluid-2" ,2)
 MoreScience.lib.recipe.removeIngredient("advanced-science-fluid-2", "processing-unit")
+MoreScience.lib.recipe.removeIngredient("advanced-science-fluid-2", "lithium-ion-battery")
+MoreScience.lib.recipe.removeIngredient("advanced-science-fluid-2", "silicon-nitride")
 
 
 
 --------------------------------------------------------------------------------
 ----- Basic automation science pack                                        -----
 --------------------------------------------------------------------------------
-
 
 
 
