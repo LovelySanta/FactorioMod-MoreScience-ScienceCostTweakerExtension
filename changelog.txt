@@ -7,6 +7,7 @@ Date: 29. 8. 2018
     - Fixed logistics science required Universal transport engines instead of Flying cargo kit
     - Fixed when bob inserter overhaul was present it wouldn't remove the fast inserter from the ATMOS set recipe
     - Fixed when bob inserter overhaul was present it wouldn't update the filter inserter from the Automated storage recipe
+    - Fixed localised name for the space science barreling recipes
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.5
 Date: 25. 8. 2018

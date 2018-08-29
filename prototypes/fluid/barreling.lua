@@ -6,7 +6,7 @@ for _,scienceFluid in pairs({
   "basic-science-fluid-3",
   "advanced-science-fluid-1",
   "advanced-science-fluid-2",
-  "extreme-science-fluid",
+  --"extreme-science-fluid",
   "basic-military-science-fluid",
   "basic-automation-science-fluid",
   "basic-power-science-fluid",
