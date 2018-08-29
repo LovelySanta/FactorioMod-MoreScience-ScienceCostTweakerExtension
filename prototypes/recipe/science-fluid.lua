@@ -64,6 +64,13 @@ MoreScience.lib.recipe.removeIngredient("basic-science-fluid-2", "fast-inserter"
 transferRecipeIngredients("science-pack-3", "basic-science-fluid-3" ,4)
 MoreScience.lib.recipe.removeIngredient("basic-science-fluid-3", "advanced-circuit")
 
+for _, ingredient in pairs(data.raw["recipe"]["basic-science-fluid-3"].ingredients) do
+  if ingredient.name == "bronze-alloy" then
+    MoreScience.lib.recipe.removeIngredient("basic-science-fluid-3", "bronze-alloy")
+    MoreScience.lib.recipe.addIngredient("sct-t3-flash-fuel", "bronze-alloy", 1, "item")
+    break
+  end
+end
 
 
 
