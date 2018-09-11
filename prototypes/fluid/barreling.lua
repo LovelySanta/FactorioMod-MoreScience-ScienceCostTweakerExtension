@@ -12,6 +12,7 @@ for _,scienceFluid in pairs({
   "basic-power-science-fluid",
   "basic-logistics-science-fluid",
 }) do
-  data.raw["recipe"]["fill-" .. scienceFluid .. "-barrel"].localised_name = {"item-name.filling-barrel", data.raw["fluid"][scienceFluid].localised_name}
-  data.raw["recipe"]["empty-" .. scienceFluid .. "-barrel"].localised_name = {"item-name.emptying-barrel", data.raw["fluid"][scienceFluid].localised_name}
+  data.raw["item"][scienceFluid .. "-barrel"].localised_name = {"item-name.barrel", data.raw["fluid"][scienceFluid].localised_name}
+  data.raw["recipe"]["fill-" .. scienceFluid .. "-barrel"].localised_name = {"item-name.filling-barrel", data.raw["item"][scienceFluid .. "-barrel"].localised_name}
+  data.raw["recipe"]["empty-" .. scienceFluid .. "-barrel"].localised_name = {"item-name.emptying-barrel", data.raw["item"][scienceFluid .. "-barrel"].localised_name}
 end
