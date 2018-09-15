@@ -16,8 +16,8 @@ if not data.raw["recipe"]["sct-logistic-cargo-unit"] then
     {
       type = "recipe",
       name = "sct-logistic-cargo-unit",
-      subgroup = "sct-science-pack-logistic",
-      order = "h_a[logistic]-b[cargo]",
+      --subgroup = "sct-science-pack-logistic",
+      --order = "h_a[logistic]-b[cargo]",
       expensive =
       {
         enabled = false,
@@ -51,8 +51,8 @@ if not data.raw["recipe"]["sct-logistic-cargo-unit"] then
     {
       type = "recipe",
       name = "sct-logistic-unimover",
-      subgroup = "sct-science-pack-logistic",
-      order = "h_a[logistic]-c[unimover]",
+      --subgroup = "sct-science-pack-logistic",
+      --order = "h_a[logistic]-c[unimover]",
       expensive =
       {
         enabled = false,
@@ -86,8 +86,8 @@ if not data.raw["recipe"]["sct-logistic-cargo-unit"] then
     {
       type = "recipe",
       name = "sct-logistic-automated-storage",
-      subgroup = "sct-science-pack-logistic",
-      order = "h_a[logistic]-d[storage]",
+      --subgroup = "sct-science-pack-logistic",
+      --order = "h_a[logistic]-d[storage]",
       expensive =
       {
         enabled = false,
@@ -121,8 +121,8 @@ if not data.raw["recipe"]["sct-logistic-cargo-unit"] then
     {
       type = "recipe",
       name = "sct-logistic-memory-unit",
-      subgroup = "sct-science-pack-logistic",
-      order = "h_a[logistic]-e[memory-unit]",
+      --subgroup = "sct-science-pack-logistic",
+      --order = "h_a[logistic]-e[memory-unit]",
       expensive =
       {
         enabled = false,
