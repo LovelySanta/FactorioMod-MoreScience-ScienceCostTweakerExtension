@@ -6,6 +6,7 @@ This mod requires the mod More Science installed.
 
 # Supported modules
 As of now, these are the supported modules:
+
 + [ScienceCostTweaker Mod (mexmer)](https://mods.factorio.com/mod/ScienceCostTweakerM)
 
 Also supports ScienceCostTweaker in combination with other mods:
