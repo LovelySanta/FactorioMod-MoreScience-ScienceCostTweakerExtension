@@ -46,6 +46,15 @@ end
 --------------------------------------------------------------------------------
 ----- Science pack 1                                                       -----
 --------------------------------------------------------------------------------
+local sciencePack = util.table.deepcopy(data.raw["recipe"]["science-pack-1"])
+transferRecipeIngredients("science-pack-1", "basic-science-fluid-1" ,5)
+MoreScience.lib.recipe.removeIngredient("basic-science-fluid-1", "copper-plate")
+MoreScience.lib.recipe.removeIngredient("basic-science-fluid-1", "iron-gear-wheel")
+
+data.raw["recipe"]["science-pack-1"].normal = nil
+data.raw["recipe"]["science-pack-1"].expensive = nil
+data.raw["recipe"]["science-pack-1"].ingredients = util.table.deepcopy(sciencePack.normal.ingredients)
+data.raw["recipe"]["science-pack-1"].results = util.table.deepcopy(sciencePack.normal.results)
 
 
 

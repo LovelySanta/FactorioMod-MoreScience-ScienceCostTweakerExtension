@@ -3,6 +3,10 @@
 ----- Science pack 1                                                       -----
 --------------------------------------------------------------------------------
 MoreScience.lib.recipe.setEngergyRequired("science-pack-1", 1)
+data.raw["recipe"]["science-pack-1"].category = "ms-basic-crafting"
+data.raw["recipe"]["science-pack-1"].subgroup = "science-bottling"
+data.raw["recipe"]["science-pack-1"].order = "e[science-pack-1]"
+data.raw["recipe"]["science-pack-1"].always_show_made_in = true
 
 
 
