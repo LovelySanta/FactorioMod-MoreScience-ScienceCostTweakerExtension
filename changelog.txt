@@ -1,7 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0 - 0.17 release
+Date: 18. 03. 2019
+  Features:
+    - Updated to 0.17
+  Modding:
+    - Updated overal use of the LSlib
+    - Labs now (should) accept science packs from other mods
+---------------------------------------------------------------------------------------------------
 Version: 0.1.11
 Date: 10. 1. 2019
-  Fixed:
+  Fixes:
     - Fixed that intermediates for Logistic Handling Set Fluid where not on the tech tree
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.10
@@ -11,13 +19,13 @@ Date: 15. 9. 2018
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.9
 Date: 15. 9. 2018
-  Fixed:
+  Fixes:
     - Fixed crafting time of science packs was altered
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.8
 Date: 12. 9. 2018
-  Fixed:
-    - Fixed localised names of science barrels was not adapted to the new fluid names
+  Fixes:
+    - Fixed localized names of science barrels was not adapted to the new fluid names
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.7
 Date: 29. 8. 2018
@@ -32,7 +40,7 @@ Date: 29. 8. 2018
     - Fixed logistics science required Universal transport engines instead of Flying cargo kit
     - Fixed when bob inserter overhaul was present it wouldn't remove the fast inserter from the ATMOS set recipe
     - Fixed when bob inserter overhaul was present it wouldn't update the filter inserter from the Automated storage recipe
-    - Fixed localised name for the space science barreling recipes
+    - Fixed localized name for the space science barreling recipes
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.5
 Date: 25. 8. 2018
@@ -62,7 +70,7 @@ Date: 21. 6. 2018
 Version: 0.1.1
 Date: 21. 6. 2018
   Fixes:
-    - Fixed some error occuring with alien research lab
+    - Fixed some error occurring with alien research lab
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0 - Limited test release
 Date: 19. 6. 2018

@@ -3,7 +3,7 @@
 ----- Science pack 1                                                       -----
 --------------------------------------------------------------------------------
 -- change coils require cables instead of plates
-MoreScience.lib.recipe.editIngredient("sct-t1-magnet-coils", "copper-plate", "copper-cable", 2)
+LSlib.recipe.editIngredient("sct-t1-magnet-coils", "copper-plate", "copper-cable", 2)
 
 
 
@@ -155,6 +155,6 @@ if not data.raw["recipe"]["sct-logistic-cargo-unit"] then
   })
 end
 
-MoreScience.lib.recipe.editIngredient("sct-logistic-memory-unit", "constant-combinator", "decider-combinator", 1)
-MoreScience.lib.recipe.editIngredient("sct-logistic-unimover", "flying-robot-frame", "electric-engine-unit", 1)
-MoreScience.lib.recipe.editIngredient("sct-logistic-unimover", "express-transport-belt", "sct-t3-atomic-sensors", 1)
+LSlib.recipe.editIngredient("sct-logistic-memory-unit", "constant-combinator", "decider-combinator", 1)
+LSlib.recipe.editIngredient("sct-logistic-unimover", "flying-robot-frame", "electric-engine-unit", 1)
+LSlib.recipe.editIngredient("sct-logistic-unimover", "express-transport-belt", "sct-t3-atomic-sensors", 1)

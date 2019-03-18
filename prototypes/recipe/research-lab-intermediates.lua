@@ -14,24 +14,24 @@
 --------------------------------------------------------------------------------
 ----- Lab MK2                                                              -----
 --------------------------------------------------------------------------------
-MoreScience.lib.recipe.addIngredient("sct-lab2-construction", "sct-lab1-construction", 1, "item")
-MoreScience.lib.recipe.addIngredient("sct-lab2-automatization", "sct-lab1-mechanization", 1, "item")
+LSlib.recipe.addIngredient("sct-lab2-construction"  , "sct-lab1-construction" )
+LSlib.recipe.addIngredient("sct-lab2-automatization", "sct-lab1-mechanization")
 
 
 
 --------------------------------------------------------------------------------
 ----- Lab MK3                                                              -----
 --------------------------------------------------------------------------------
-MoreScience.lib.recipe.addIngredient("sct-lab3-construction", "sct-lab2-construction", 1, "item")
-MoreScience.lib.recipe.addIngredient("sct-lab3-optics", "sct-lab2-automatization", 1, "item")
+LSlib.recipe.addIngredient("sct-lab3-construction", "sct-lab2-construction"  )
+LSlib.recipe.addIngredient("sct-lab3-optics"      , "sct-lab2-automatization")
 
 
 
 --------------------------------------------------------------------------------
 ----- Lab MK4                                                              -----
 --------------------------------------------------------------------------------
-MoreScience.lib.recipe.addIngredient("sct-lab4-construction", "sct-lab3-construction", 1, "item")
-MoreScience.lib.recipe.addIngredient("sct-lab4-manipulators", "sct-lab3-optics", 1, "item")
+LSlib.recipe.addIngredient("sct-lab4-construction", "sct-lab3-construction")
+LSlib.recipe.addIngredient("sct-lab4-manipulators", "sct-lab3-optics"      )
 
 
 

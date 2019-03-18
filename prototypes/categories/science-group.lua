@@ -1,4 +1,5 @@
 
 -- move science groups together
-data.raw["item-group"]["sct-science"].order = data.raw["item-group"]["ms-science"].order .. "-a[intermediate]"
-data.raw["item-group"]["ms-science"].order = data.raw["item-group"]["ms-science"].order .. "-b[packs]"
+local orderString = LSlib.item.getOrderstring("item-group", "ms-science", orderstring) or ""
+LSlib.item.setOrderstring("item-group", "sct-science", orderString.. "-a[intermediate]")
+LSlib.item.setOrderstring("item-group", "ms-science" , orderString.. "-b[packs]"       )

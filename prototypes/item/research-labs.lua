@@ -1,14 +1,23 @@
+local labMK1 = "lab"
 
 --------------------------------------------------------------------------------
 ----- Burner lab                                                           -----
 --------------------------------------------------------------------------------
--- burner lab gets same icon as regular lab
-data.raw["item"]["lab-burner"].icon = data.raw["item"]["lab"].icons[1].icon
-data.raw["item"]["lab-burner"].icon_size = data.raw["item"]["lab"].icon_size
-data.raw["item"]["lab-burner"].order = "d[lab]-a"
+local labMK0 = "lab-mk0"
+local labSubgroup = data.raw["item"][labMK0].subgroup
+
+-- burner lab gets flame overlay
+local icons = LSlib.item.getIcons("item", labMK1)
+icons[2] = {
+  icon = "__ScienceCostTweakerM__/graphics/overlays/flame.png",
+  icon_size = 32,
+}
+LSlib.item.changeIcons("item", labMK0, icons)
+LSlib.item.setOrderstring("item", labMK0, "d[lab]-a")
+
 if data.raw["item-subgroup"]["sct-labs"] then
-  data.raw["item-subgroup"]["sct-labs"].group = "ms-science"
-  data.raw["item"]["lab-burner"].subgroup = "sct-labs"
+  labSubgroup = "sct-labs"
+  LSlib.item.setSubgroup("item", labMK0, labSubgroup)
 end
 
 
@@ -16,64 +25,61 @@ end
 ----- Lab MK1                                                              -----
 --------------------------------------------------------------------------------
 -- change localized name
-data.raw["item"]["lab"].localised_name = data.raw["lab"]["lab"].localised_name
+LSlib.item.setLocalisedName("item", labMK1, {"item-name.lab"})
 -- change subgroup
-data.raw["item"]["lab"].subgroup = data.raw["item"]["lab-burner"].subgroup
-data.raw["item"]["lab"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "b"
--- change icon
-data.raw["item"]["lab"].icon = data.raw["item"]["lab"].icons[1].icon
---data.raw["item"]["lab"].icon_size = data.raw["item"]["lab"].icons[1].icon_size
-data.raw["item"]["lab"].icons = nil
+LSlib.item.setSubgroup   ("item", labMK1, labSubgroup)
+LSlib.item.setOrderstring("item", labMK1, LSlib.utils.string.split(data.raw["item"][labMK0].order, "-")[1] .. "b")
 
 
 
 --------------------------------------------------------------------------------
 ----- Lab MK2                                                              -----
 --------------------------------------------------------------------------------
+local labMK2 = "sct-lab-t2"
 -- change subgroup
-data.raw["item"]["sct-lab-t2"].subgroup = data.raw["item"]["lab-burner"].subgroup
-data.raw["item"]["sct-lab-t2"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "c"
--- change icon
-data.raw["item"]["sct-lab-t2"].icon = data.raw["item"]["sct-lab-t2"].icons[1].icon
---data.raw["item"]["sct-lab-t2"].icon_size = data.raw["item"]["sct-lab-t2"].icons[1].icon_size
-data.raw["item"]["sct-lab-t2"].icons = nil
+LSlib.item.setSubgroup   ("item", labMK2, labSubgroup)
+LSlib.item.setOrderstring("item", labMK2, LSlib.utils.string.split(data.raw["item"][labMK0].order, "-")[1] .. "c")
 
 
 
 --------------------------------------------------------------------------------
 ----- Lab MK3                                                              -----
 --------------------------------------------------------------------------------
+local labMK3 = "sct-lab-t3"
 -- change subgroup
-data.raw["item"]["sct-lab-t3"].subgroup = data.raw["item"]["lab-burner"].subgroup
-data.raw["item"]["sct-lab-t3"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "d"
--- change icon
-data.raw["item"]["sct-lab-t3"].icon = data.raw["item"]["sct-lab-t3"].icons[1].icon
---data.raw["item"]["sct-lab-t3"].icon_size = data.raw["item"]["sct-lab-t3"].icons[1].icon_size
-data.raw["item"]["sct-lab-t3"].icons = nil
+LSlib.item.setSubgroup   ("item", labMK3, labSubgroup)
+LSlib.item.setOrderstring("item", labMK3, LSlib.utils.string.split(data.raw["item"][labMK0].order, "-")[1] .. "d")
+
 
 
 --------------------------------------------------------------------------------
 ----- Lab MK4                                                              -----
 --------------------------------------------------------------------------------
+local labMK4 = "sct-lab-t4"
 -- change subgroup
-data.raw["item"]["sct-lab-t4"].subgroup = data.raw["item"]["lab-burner"].subgroup
-data.raw["item"]["sct-lab-t4"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "e"
--- change icon
-data.raw["item"]["sct-lab-t4"].icon = data.raw["item"]["sct-lab-t4"].icons[1].icon
---data.raw["item"]["sct-lab-t4"].icon_size = data.raw["item"]["sct-lab-t4"].icons[1].icon_size
-data.raw["item"]["sct-lab-t4"].icons = nil
+LSlib.item.setSubgroup   ("item", labMK4, labSubgroup)
+LSlib.item.setOrderstring("item", labMK4, LSlib.utils.string.split(data.raw["item"][labMK0].order, "-")[1] .. "e")
 
 
 
 --------------------------------------------------------------------------------
 ----- Infused lab                                                          -----
 --------------------------------------------------------------------------------
+local labMK5 = "lab-mk2"
 -- change subgroup
-data.raw["item"]["lab-mk2"].subgroup = data.raw["item"]["lab-burner"].subgroup
-data.raw["item"]["lab-mk2"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "f"
+LSlib.item.setSubgroup   ("item", labMK5, labSubgroup)
+LSlib.item.setOrderstring("item", labMK5, LSlib.utils.string.split(data.raw["item"][labMK0].order, "-")[1] .. "f")
+-- infused lab gets 5 overlay
+local icons = LSlib.item.getIcons("item", labMK5)
+icons[2] = {
+  icon = "__ScienceCostTweakerM__/graphics/overlays/5.png",
+  icon_size = 32,
+}
+LSlib.item.changeIcons("item", labMK5, icons)
+LSlib.item.setLocalisedName("item", labMK5, {"item-name.lab-mk2"})
 
 
-
+--[[
 --------------------------------------------------------------------------------
 ----- Lab module                                                          -----
 --------------------------------------------------------------------------------
@@ -104,3 +110,4 @@ if data.raw["item"]["lab-alien"] then
   data.raw["item"]["lab-alien"].subgroup = data.raw["item"]["lab-burner"].subgroup
   data.raw["item"]["lab-alien"].order = MoreScience.lib.util.stringSplit(data.raw["item"]["lab-burner"].order, "-")[1] .. "i"
 end
+]]
