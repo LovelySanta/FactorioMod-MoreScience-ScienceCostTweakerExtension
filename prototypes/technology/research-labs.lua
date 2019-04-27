@@ -55,4 +55,7 @@ LSlib.technology.addIngredient(yellowLabTechName, 1, string.format(scienceNames.
 --------------------------------------------------------------------------------
 local infusedLabTechName = string.format(scienceNames.white, "pack")
 
---LSlib.technology.addRecipeUnlock(infusedLabTechName, "lab-mk2")
+if data.raw["technology"]["sct-lab-lab2"] then
+  LSlib.technology.addRecipeUnlock   ("sct-lab-lab2", "lab-mk2")
+  LSlib.technology.removeRecipeUnlock("sct-lab-lab2", "lab-2"  )
+end

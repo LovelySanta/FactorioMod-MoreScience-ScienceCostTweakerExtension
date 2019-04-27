@@ -169,10 +169,33 @@ for _,recipeEffect in pairs{
 } do -- this is for ordering purpose only
   LSlib.technology.moveRecipeUnlock(pinkSciencePackTech, pinkSciencePackTech, recipeEffect)
 end
+
 LSlib.technology.addRecipeUnlock(pinkSciencePackTech, "sct-logistic-cargo-unit"       )
 LSlib.technology.addRecipeUnlock(pinkSciencePackTech, "sct-logistic-unimover"         )
 LSlib.technology.addRecipeUnlock(pinkSciencePackTech, "sct-logistic-automated-storage")
 LSlib.technology.addRecipeUnlock(pinkSciencePackTech, "sct-logistic-memory-unit"      )
+
+if mods["MoreScience-BobAngelsExtension"] then
+  for _,recipeEffect in pairs{
+    "sct-logistic-cargo-unit"       ,
+    "sct-logistic-unimover"         ,
+    "sct-logistic-automated-storage",
+    "sct-logistic-memory-unit"      ,
+  } do -- this is for ordering purpose only
+    LSlib.technology.moveRecipeUnlock(pinkSciencePackTech, pinkSciencePackTech, recipeEffect)
+  end
+
+  LSlib.technology.removeIngredient(pinkSciencePackTech,    string.format(scienceNames.red   , "pack"))
+  LSlib.technology.addIngredient   (pinkSciencePackTech, 1, string.format(scienceNames.red   , "pack"))
+  LSlib.technology.removeIngredient(pinkSciencePackTech,    string.format(scienceNames.green , "pack"))
+  LSlib.technology.addIngredient   (pinkSciencePackTech, 2, string.format(scienceNames.green , "pack"))
+  LSlib.technology.addIngredient   (pinkSciencePackTech, 2, string.format(scienceNames.gray  , "pack"))
+  LSlib.technology.addIngredient   (pinkSciencePackTech, 3, string.format(scienceNames.orange, "pack"))
+  LSlib.technology.removeIngredient(pinkSciencePackTech,    string.format(scienceNames.blue  , "pack"))
+  LSlib.technology.addIngredient   (pinkSciencePackTech, 4, string.format(scienceNames.blue  , "pack"))
+  LSlib.technology.addIngredient   (pinkSciencePackTech, 5, string.format(scienceNames.purple, "pack"))
+  LSlib.technology.addIngredient   (pinkSciencePackTech, 5, string.format(scienceNames.yellow, "pack"))
+end
 
 
 
@@ -194,6 +217,10 @@ LSlib.technology.removeIngredient(whiteSciencePackTech,    string.format(science
 LSlib.technology.addIngredient   (whiteSciencePackTech, 4, string.format(scienceNames.purple, "pack"))
 LSlib.technology.removeIngredient(whiteSciencePackTech,    string.format(scienceNames.yellow, "pack"))
 LSlib.technology.addIngredient   (whiteSciencePackTech, 4, string.format(scienceNames.yellow, "pack"))
+if mods["MoreScience-BobAngelsExtension"] then
+  -- in case of bobs mods this could be present
+  LSlib.technology.removeIngredient(whiteSciencePackTech,  string.format(scienceNames.pink  , "pack"))
+end
 LSlib.technology.addIngredient   (whiteSciencePackTech, 5, string.format(scienceNames.pink  , "pack"))
 
 LSlib.technology.addRecipeUnlock (whiteSciencePackTech, string.format(scienceNames.white, "pack" )                 )

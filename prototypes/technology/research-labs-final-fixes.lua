@@ -4,4 +4,8 @@ local scienceNames = require("prototypes/settings").scienceNames
 --------------------------------------------------------------------------------
 local whiteSciencePackTech = string.format(scienceNames.white, "pack")
 
-LSlib.technology.addRecipeUnlock(whiteSciencePackTech, "lab-mk2")
+if data.raw["technology"]["sct-lab-lab2"] then
+  LSlib.technology.removeRecipeUnlock(whiteSciencePackTech, "lab-mk2")
+else
+  LSlib.technology.addRecipeUnlock(whiteSciencePackTech, "lab-mk2")
+end
