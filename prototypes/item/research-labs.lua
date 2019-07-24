@@ -11,6 +11,8 @@ local icons = LSlib.item.getIcons("item", labMK1)
 icons[2] = {
   icon = "__ScienceCostTweakerM__/graphics/overlays/flame.png",
   icon_size = 32,
+  shift = {-32, 32},
+  scale = (icons[1].icon_size * (icons[1].scale or 1)) / 32,
 }
 LSlib.item.changeIcons("item", labMK0, icons)
 LSlib.item.setOrderstring("item", labMK0, "d[lab]-a")
@@ -19,6 +21,7 @@ if data.raw["item-subgroup"]["sct-labs"] then
   labSubgroup = "sct-labs"
   LSlib.item.setSubgroup("item", labMK0, labSubgroup)
 end
+
 
 
 --------------------------------------------------------------------------------
@@ -72,11 +75,12 @@ LSlib.item.setOrderstring("item", labMK5, LSlib.utils.string.split(data.raw["ite
 -- infused lab gets 5 overlay
 local icons = LSlib.item.getIcons("item", labMK5)
 icons[2] = {
-  icon = "__ScienceCostTweakerM__/graphics/overlays/5.png",
-  icon_size = 32,
+  icon = "__ScienceCostTweakerM__/graphics/overlays/5-64.png",
+  icon_size = 64,
 }
 LSlib.item.changeIcons("item", labMK5, icons)
 LSlib.item.setLocalisedName("item", labMK5, {"item-name.lab-mk2"})
+
 
 
 --[[

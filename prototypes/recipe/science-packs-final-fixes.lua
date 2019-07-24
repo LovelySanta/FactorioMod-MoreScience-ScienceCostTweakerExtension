@@ -6,6 +6,7 @@ local scienceNames     = require("prototypes/settings").scienceNames
 local redSciencePack = string.format(scienceNames.red, "pack")
 local redSciencePackBasic = redSciencePack .. "-basic"
 
+--[[
 -- remove the old ingredients
 local ingredients = util.table.deepcopy(
   data.raw["recipe"][redSciencePackBasic]          .ingredients or
@@ -32,6 +33,8 @@ for _,ingredient in pairs(ingredients) do
                                ingredient["type"]                        )
   end
 end
+]]
+
 
 
 --------------------------------------------------------------------------------

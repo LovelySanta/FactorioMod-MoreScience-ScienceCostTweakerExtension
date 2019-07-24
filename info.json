@@ -8,9 +8,9 @@
   "homepage": "https://mods.factorio.com/mod/MoreScience-ScienceCostTweakerExtension",
   "description": "An extension to the Science Cost Tweaker mod: Change the way science is being made (even more).",
   "dependencies": [
-    "MoreScience >= 0.2.2",
+    "MoreScience >= 0.2.8",
     "ScienceCostTweakerM >= 0.17.10",
 
-    "? MoreScience-BobAngelsExtension >= 0.2.0"
+    "? MoreScience-BobAngelsExtension"
   ]
 }
