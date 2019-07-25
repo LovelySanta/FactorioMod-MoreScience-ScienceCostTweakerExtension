@@ -1,3 +1,4 @@
+require("__LSlib__/LSlib")
 
 require("prototypes.categories.science-group"   )
 require("prototypes.categories.science-subgroup")

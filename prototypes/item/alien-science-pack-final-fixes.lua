@@ -1,5 +1,22 @@
 local scienceNames = require("prototypes/settings").scienceNames
 
+local alienScienceGroup = "ms-science-alien-science-pack"
+if data.raw["item-subgroup"][alienScienceGroup] then
+  data.raw["item-subgroup"][alienScienceGroup].group = "ms-science"
+  data.raw["item-subgroup"][alienScienceGroup].order = "g-c[science-pack]-c"
+else
+  data:extend{{
+    type = "item-subgroup",
+    name = alienScienceGroup,
+    group = data.raw["item-subgroup"]["science-pack"].group,
+    order = "g-c[science-pack]-c"
+  }}
+end
+
+if data.raw["item-subgroup"]["science-alien-packs"] then
+  data.raw["item-subgroup"]["science-alien-packs"].group = "ms-science"
+end
+
 if data.raw["tool"]["science-pack-gold"] then
   -- change graphics of alien science packs
   local icons = LSlib.item.getIcons("tool", "alien-science-pack")
@@ -25,7 +42,7 @@ if data.raw["tool"]["science-pack-gold"] then
     string.format(alienSciencePack, "-blue"  ),
     string.format(alienSciencePack, "-purple"),
   }) do
-    LSlib.item.setSubgroup("tool", packName, "ms-science-alien-science-pack")
+    LSlib.item.setSubgroup("tool", packName, alienScienceGroup)
     LSlib.item.setOrderstring("tool", packName, string.format("%s-%s",
       LSlib.item.getOrderstring("tool", string.format(scienceNames.blue, "pack")),
       LSlib.item.getOrderstring("tool", packName)))
@@ -33,13 +50,4 @@ if data.raw["tool"]["science-pack-gold"] then
     LSlib.recipe.setSubgroup(packName, nil)
     LSlib.recipe.setOrderstring("tool", packName, nil)
   end
-end
-
-if data.raw["item-subgroup"]["science-alien-packs"] then
-  data.raw["item-subgroup"]["science-alien-packs"].group = "ms-science"
-end
-
-if data.raw["item-subgroup"]["ms-science-alien-science-pack"] then
-  data.raw["item-subgroup"]["ms-science-alien-science-pack"].group = "ms-science"
-  data.raw["item-subgroup"]["ms-science-alien-science-pack"].order = "g-c[science-pack]-c"
 end

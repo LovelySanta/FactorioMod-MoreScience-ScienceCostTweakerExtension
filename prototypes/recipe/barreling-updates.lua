@@ -1,4 +1,4 @@
-local scienceNames = require("__MoreScience__/prototypes/settings").scienceNames
+local scienceNames = require("prototypes/settings").scienceNames
 
 -- Fix barrel names
 for _,scienceFluid in pairs({

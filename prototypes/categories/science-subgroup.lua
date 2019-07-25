@@ -1,4 +1,3 @@
-require("__MoreScience__/LSlib/lib")
 local scienceNames = require("prototypes/settings").scienceNames
 
 -- move science pack subgroup back in place

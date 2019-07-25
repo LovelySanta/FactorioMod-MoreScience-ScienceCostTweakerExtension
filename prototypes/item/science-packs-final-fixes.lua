@@ -1,4 +1,4 @@
-local scienceNames = require("__MoreScience__/prototypes/settings").scienceNames
+local scienceNames = require("prototypes/settings").scienceNames
 
 -- move regular science packs back to the science subgroup where they belong
 for _,scienceName in pairs(scienceNames) do
