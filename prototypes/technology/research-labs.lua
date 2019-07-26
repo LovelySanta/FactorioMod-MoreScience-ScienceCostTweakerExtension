@@ -21,6 +21,8 @@ LSlib.technology.removeRecipeUnlock("basic-automation", "lab") -- remove the lab
 LSlib.technology.setLocalisedName(redLabTechName, {"item-tier-name.mk0", {"technology-name."..redLabTechName}})
 data.raw["technology"][redLabTechName].effects = {}
 LSlib.technology.addRecipeUnlock(redLabTechName, "lab-mk0")
+LSlib.technology.addRecipeUnlock(redLabTechName, "sct-lab1-construction")
+LSlib.technology.addRecipeUnlock(redLabTechName, "sct-lab1-mechanization")
 
 -- change the icons
 local icons = LSlib.technology.getIcons(redLabTechName)
@@ -29,6 +31,7 @@ icons[2] = {
   icon_size = 128,
 }
 LSlib.technology.changeIcons(redLabTechName, icons)
+
 
 -- lab mk 2 (green) ------------------------------------------------------------
 --------------------------------------------------------------------------------
