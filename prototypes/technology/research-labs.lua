@@ -12,7 +12,7 @@ redLabTechBis.name = redLabTechBis.name .. "-bis"
 redLabTechBis.prerequisites = {redLabTechName, "basic-automation"}
 data:extend{redLabTechBis}
 LSlib.technology.setLocalisedName(redLabTechBis.name, {"technology-name."..redLabTechName})
-LSlib.technology.addIngredient   (redLabTechBis.name, 10, string.format(scienceNames.red, "pack"))
+LSlib.technology.addIngredient   (redLabTechBis.name, 1, string.format(scienceNames.red, "pack"))
 
 LSlib.technology.removeRecipeUnlock("basic-automation", "lab") -- remove the lab since it has its own tech now
 
