@@ -1,7 +1,18 @@
 local scienceNames = require("prototypes/settings").scienceNames
 
 -- move regular science packs back to the science subgroup where they belong
-for _,scienceName in pairs(scienceNames) do
+for _,scienceName in pairs{
+  scienceNames.red,
+  scienceNames.green,
+  scienceNames.gray,
+  scienceNames.orange,
+  scienceNames.cyan,
+  scienceNames.blue,
+  scienceNames.purple,
+  scienceNames.yellow,
+  scienceNames.pink,
+  scienceNames.white,
+} do
   LSlib.item.setSubgroup   ("tool", string.format(scienceName, "pack"), "science-pack")
   LSlib.item.setOrderstring("tool", string.format(scienceName, "pack"),
     "z-MoreScience-" .. LSlib.utils.string.split(
