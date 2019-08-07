@@ -17,17 +17,15 @@ local function removeSciencePackFromInputs(scienceName, inputs)
   for inputIndex,input in pairs(inputs or {}) do
     if input == string.format(scienceName, "pack") then
       table.remove(inputs, inputIndex)
-      break
+      return
     end
   end
-  return inputs
 end
 
 local function removeAllSciencePacksFromInputs(inputs)
   for _, scienceName in pairs(scienceNames) do
-    inputs = removeSciencePackFromInputs(scienceName, inputs)
+    removeSciencePackFromInputs(scienceName, inputs)
   end
-  return inputs
 end
 
 --------------------------------------------------------------------------------
@@ -37,7 +35,7 @@ local labMK1 = "lab"
 
 -- remove all inputs
 local inputs = data.raw["lab"][labMK1].inputs
-inputs = removeAllSciencePacksFromInputs(inputs)
+removeAllSciencePacksFromInputs(inputs)
 
 -- add them back in the correct order
 for scienceIndex,scienceName in pairs{
@@ -48,6 +46,7 @@ end
 
 -- change localized name
 LSlib.entity.setLocalisedName("lab", labMK1, LSlib.item.getLocalisedName("item", labMK1))
+
 
 
 --------------------------------------------------------------------------------
@@ -72,7 +71,7 @@ local labMK2 = "sct-lab-t2"
 
 -- remove all inputs
 local inputs = data.raw["lab"][labMK2].inputs
-inputs = removeAllSciencePacksFromInputs(inputs)
+removeAllSciencePacksFromInputs(inputs)
 
 -- add them back in the correct order
 for scienceIndex,scienceName in pairs{
@@ -94,7 +93,7 @@ local labMK3 = "sct-lab-t3"
 
 -- remove all inputs
 local inputs = data.raw["lab"][labMK3].inputs
-inputs = removeAllSciencePacksFromInputs(inputs)
+removeAllSciencePacksFromInputs(inputs)
 
 -- add them back in the correct order
 for scienceIndex,scienceName in pairs{
@@ -117,7 +116,7 @@ local labMK4 = "sct-lab-t4"
 
 -- remove all inputs
 local inputs = data.raw["lab"][labMK4].inputs
-inputs = removeAllSciencePacksFromInputs(inputs)
+removeAllSciencePacksFromInputs(inputs)
 
 -- add them back in the correct order
 for scienceIndex,scienceName in pairs{
@@ -148,6 +147,7 @@ data.raw["lab"][labMK5].energy_usage = "5MW"
 data.raw["lab"][labMK5].max_health = 350
 -- change module slots
 data.raw["lab"][labMK5].module_specification = util.table.deepcopy(data.raw["lab"][labMK4].module_specification)
+data.raw["lab"][labMK5].module_specification.module_slots = 2 * data.raw["lab"][labMK5].module_specification.module_slots
 -- quick replacement
 data.raw["lab"][labMK5].fast_replaceable_group = data.raw["lab"][labMK1].fast_replaceable_group
 
@@ -155,6 +155,10 @@ LSlib.entity.setLocalisedName("lab", labMK5,
   LSlib.item.getLocalisedName("item", labMK5)
 )
 LSlib.entity.changeIcons("lab", labMK5, LSlib.item.getIcons("item", labMK5))
+
+data.raw["lab"][labMK5].off_animation = data.raw["lab"][labMK4].off_animation
+data.raw["lab"][labMK5].on_animation = data.raw["lab"][labMK4].on_animation
+
 
 
 --[[

@@ -3,6 +3,8 @@ require("prototypes.item.science-packs-final-fixes")
 require("prototypes.item.research-labs-final-fixes")
 require("prototypes.item.alien-science-pack-final-fixes")
 
+require("prototypes.entity.research-labs-final-fixes")
+
 require("prototypes.recipe.science-packs-final-fixes")
 require("prototypes.recipe.science-fluids-final-fixes")
 

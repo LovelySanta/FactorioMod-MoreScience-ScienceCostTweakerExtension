@@ -1,3 +1,4 @@
+local scienceNames = require("prototypes/settings").scienceNames
 local labMK1 = "lab"
 
 --------------------------------------------------------------------------------
@@ -72,12 +73,17 @@ local labMK5 = "lab-mk2"
 -- change subgroup
 LSlib.item.setSubgroup   ("item", labMK5, labSubgroup)
 LSlib.item.setOrderstring("item", labMK5, LSlib.utils.string.split(data.raw["item"][labMK0].order, "-")[1] .. "f")
--- infused lab gets 5 overlay
-local icons = LSlib.item.getIcons("item", labMK5)
-icons[2] = {
-  icon = "__ScienceCostTweakerM__/graphics/overlays/5-64.png",
-  icon_size = 64,
+-- change overlay
+local icons = {
+  {
+    icon = "__ScienceCostTweakerM__/graphics/sct-lab-t4/icon-128.png",
+    icon_size = 128,
+    scale = 0.25,
+  }
 }
+for iconIndex, iconLayer in pairs(LSlib.item.getIcons("fluid", string.format(scienceNames.white, "fluid"), 0.5, {8, -8})) do
+  icons[iconIndex + 1] = iconLayer
+end
 LSlib.item.changeIcons("item", labMK5, icons)
 LSlib.item.setLocalisedName("item", labMK5, {"item-name.lab-mk2"})
 
