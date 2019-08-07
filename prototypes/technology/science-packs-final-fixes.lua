@@ -22,6 +22,34 @@ for _,recipeEffect in pairs{
   LSlib.technology.moveRecipeUnlock("bottling-research", "bottling-research", recipeEffect)
 end
 
+if mods["bobtech"] and settings.startup["bobmods-burnerphase"].value == true then
+  -- there are now two redSciencePackTech to unlock the burner phase
+  LSlib.technology.setHidden(redSciencePackTech)
+  local bobRedTechName = "automation-science-pack"
+
+  -- move prerequisites of redSciencePackTech over to bobs redSciencePackTech
+  for _,prerequisiteName in pairs(data.raw.technology[redSciencePackTech].prerequisites or {}) do
+    LSlib.technology.addPrerequisite(bobRedTechName, prerequisiteName)
+  end
+
+  -- move prerequisites on red tech over to bobs redSciencePackTech
+  for technologyName, technology in pairs(data.raw.technology) do
+    for prerequisiteIndex, prerequisiteName in pairs(technology.prerequisites or {}) do
+      if prerequisiteName == redSciencePackTech then
+        LSlib.technology.movePrerequisite(technologyName, prerequisiteName, bobRedTechName)
+      end
+    end
+  end
+
+  -- move the recipe unlocks over to redSciencePackTech
+  local effects = util.table.deepcopy(data.raw.technology[redSciencePackTech].effects) or {}
+  for _,effect in pairs(effects) do
+    if effect.type == "unlock-recipe" then
+      LSlib.technology.moveRecipeUnlock(redSciencePackTech, bobRedTechName, effect.recipe)
+    end
+  end
+end
+
 
 
 -- green science pack ----------------------------------------------------------
