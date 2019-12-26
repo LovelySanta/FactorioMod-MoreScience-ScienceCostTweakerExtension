@@ -43,4 +43,13 @@ removeSciencePackFromInputs("sct-bio-science-pack", inputs)
 local labMK4 = "sct-lab-t4"
 local inputs = data.raw["lab"][labMK4].inputs
 removeSciencePackFromInputs("sct-bio-science-pack", inputs)
-table.insert(inputs, string.format(scienceNames.white, "pack"))
+
+hasWhiteScience = false
+for _,packName in pairs(inputs) do
+  if packName == string.format(scienceNames.white, "pack") then
+    hasWhiteScience = true
+  end
+end
+if not hasWhiteScience then
+  table.insert(inputs, string.format(scienceNames.white, "pack"))
+end

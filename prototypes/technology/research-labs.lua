@@ -23,6 +23,7 @@ data.raw["technology"][redLabTechName].effects = {}
 LSlib.technology.addRecipeUnlock(redLabTechName, "lab-mk0")
 LSlib.technology.addRecipeUnlock(redLabTechName, "sct-lab1-construction")
 LSlib.technology.addRecipeUnlock(redLabTechName, "sct-lab1-mechanization")
+LSlib.technology.moveRecipeUnlock("basic-automation", redLabTechName, "transport-belt")
 
 -- change the icons
 local icons = LSlib.technology.getIcons(redLabTechName)
